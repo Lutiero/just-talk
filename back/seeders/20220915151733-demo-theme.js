@@ -5,8 +5,9 @@ module.exports = {
       {
         title: 'Depressão',
         subscribersAmount: 10,
-        imageUrl: 'https://images2.imgbox.com/66/4e/rFfonZQM_o.png',
-        highlight: true,
+        thumbnail: 'https://images2.imgbox.com/66/4e/rFfonZQM_o.png',
+        imageHighlighted: '',
+        highlighted: true,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -14,17 +15,9 @@ module.exports = {
       {
         title: 'Autoestima',
         subscribersAmount: 28,
-        imageUrl: 'https://images2.imgbox.com/96/1a/PhYIbE34_o.png',
-        highlight: true,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-
-      {
-        title: 'Motivação',
-        subscribersAmount: 56,
-        imageUrl: 'https://images2.imgbox.com/06/1f/ksKfNbhX_o.png',
-        highlight: true,
+        thumbnail: 'https://images2.imgbox.com/96/1a/PhYIbE34_o.png',
+        imageHighlighted: '',
+        highlighted: true,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -32,8 +25,9 @@ module.exports = {
       {
         title: 'Relacionamento',
         subscribersAmount: 33,
-        imageUrl: 'https://images2.imgbox.com/3a/9a/RUHVLAX9_o.png',
-        highlight: false,
+        thumbnail: 'https://images2.imgbox.com/3a/9a/RUHVLAX9_o.png',
+        imageHighlighted: '',
+        highlighted: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -41,8 +35,9 @@ module.exports = {
       {
         title: 'Sono',
         subscribersAmount: 14,
-        imageUrl: 'https://images2.imgbox.com/19/a5/dJw6qfyT_o.png',
-        highlight: false,
+        thumbnail: 'https://images2.imgbox.com/19/a5/dJw6qfyT_o.png',
+        imageHighlighted: '',
+        highlighted: false,
         createdAt: new Date(),
         updatedAt: new Date()
       },

@@ -1,4 +1,5 @@
 <script>
+	export let themes;
 </script>
 
 <div class="title">
@@ -14,45 +15,17 @@
 			<input type="radio" name="btn" id="radio4" />
 			<input type="radio" name="btn" id="radio5" />
 
-			<div class="images first">
-				<img src="./images/motivacao.png" alt="Motivação" />
-				<div class="text">
-					<p>139 pessoas</p>
+			{#each themes as theme}
+				<div class="images first">
+					<img src={theme.thumbnail} alt={theme.title} />
+					<div class="text">
+						<p>{theme.subscribersAmount} pessoas</p>
+					</div>
+					<div class="text2">
+						<p>{theme.title}</p>
+					</div>
 				</div>
-				<div class="text2">
-					<p>Motivação</p>
-				</div>
-			</div>
-
-			<div class="images">
-				<img src="./images/sono.png" alt="Sono" />
-				<div class="text">
-					<p>170 pessoas</p>
-				</div>
-				<div class="text2">
-					<p>Sono</p>
-				</div>
-			</div>
-
-			<div class="images">
-				<img src="./images/ansiedade.png" alt="Ansiedade" />
-				<div class="text">
-					<p>89 pessoas</p>
-				</div>
-				<div class="text2">
-					<p>Ansiedade</p>
-				</div>
-			</div>
-
-			<div class="images">
-				<img src="./images/relacionamento.png" alt="Relacionamento" />
-				<div class="text">
-					<p>133 pessoas</p>
-				</div>
-				<div class="text2">
-					<p>Relacionamento</p>
-				</div>
-			</div>
+			{/each}
 		</div>
 		<div class="balls">
 			<label class="manual" for="radio1" />
@@ -68,10 +41,6 @@
 		letter-spacing: 0.32px;
 		color: #343342;
 		text-align: left;
-	}
-	.title a {
-		text-align: right;
-		padding-left: 225px;
 	}
 	.text2 {
 		padding: 8px 12px;
@@ -92,11 +61,6 @@
 		bottom: 50px;
 		width: 100%;
 		z-index: 25;
-	}
-	.text span {
-		color: #f2f2f2;
-		font-size: 15px;
-		text-align: center;
 	}
 	.text p {
 		color: #f2f2f2;
@@ -171,14 +135,14 @@
 	}
 
 	#radio2:checked ~ .first {
-		margin-left: -20%;
+		margin-left: -15%;
 	}
 
 	#radio3:checked ~ .first {
-		margin-left: -40%;
+		margin-left: -20%;
 	}
 
 	#radio4:checked ~ .first {
-		margin-left: -60%;
+		margin-left: -25%;
 	}
 </style>

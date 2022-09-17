@@ -16,8 +16,9 @@ module.exports = (sequelize, DataTypes) => {
   Theme.init({
     title: DataTypes.STRING,
     subscribersAmount: DataTypes.INTEGER,
-    imageUrl: DataTypes.STRING,
-    highlight: DataTypes.BOOLEAN
+    thumbnail: DataTypes.STRING,
+    imageHighlighted: DataTypes.STRING,
+    highlighted: DataTypes.BOOLEAN
   }, {
     sequelize,
     modelName: 'Theme',

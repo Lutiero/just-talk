@@ -14,10 +14,13 @@ module.exports = {
       subscribersAmount: {
         type: Sequelize.INTEGER
       },
-      imageUrl: {
+      thumbnail: {
         type: Sequelize.STRING
       },
-      highlight: {
+      imageHighlighted: {
+        type: Sequelize.STRING
+      },
+      highlighted: {
         type: Sequelize.BOOLEAN
       },
       createdAt: {

@@ -7,5 +7,5 @@
 </svelte:head>
 
 <section>
-	<p>teste</p>
+	<p>Redirecionando para a Home... ou não</p>
 </section>

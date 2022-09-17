@@ -7,6 +7,6 @@ export const load = async () => {
     response = await response.json();
     console.log("Response", response)
     return {
-        locations: response
+        themes: response,
     }
 };
