@@ -59,6 +59,7 @@
         .doctor h5{
             color: #A7B6C4;
             font-size: 13px;
+            margin: 0;
         }
         .doctor a {
             color: #3AB4D1;
