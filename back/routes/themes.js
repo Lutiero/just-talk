@@ -12,4 +12,10 @@ router.post('/create', async (req, res) =>{
     res.status(201).json(newTheme);
 });
 
+router.get('/:id', async (req, res) => {
+    const { id } = req.params;
+    const theme = await Theme.findByPk(id);
+    res.status(200).json(theme);
+});
+
 module.exports = router;
