@@ -1,119 +1,92 @@
 <script></script>
-    
-    <div class="central">
-    
-        <div class="server">
-            <div class="servidor">
-                <img src="../public/images/elijah-hiett-umfpFoKxIVg-unsplash.png" alt="">
-                <label for="">Alison Andrade</label>
-                <b><a href="/" class="resposta">3 respostas ></a></b>   
-            </div>
-            <label for="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</label>
+    <div id="comments">
+
+            <!-- Somente para Separar -->
+        
+
+
+        
+        <div class="container">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</p>
+        </div>
+        <div class="doctor">
+            <h5>Dr. Silvia Lima</h5> <a href="/">16 respostas ></a>
+        </div>     
+        
+        <!-- Somente para Separar -->
+        
+        <div class="container">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem </p>
+        </div>
+        <div class="user">
+            <h5>Você</h5>
         </div>
         
-    
-    
-        <div class="user">
-    
-            <div class="usuario">
-                <label for="" class="username">Você</label>
-                <img src="../public/images/nick-arnot-AuCrXk0pLWo-unsplash.png" alt=""><br>
-            </div>
-            <label for="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</label>
+
+        <div class="container">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</p>
         </div>
-    
+        <div class="doctor">
+            <h5>Dr. Silvia Lima</h5> <a href="/">16 respostas ></a>
+        </div>
         <!-- Somente para Separar -->
-    
-        <div class="server">
-            <div class="servidor">
-                <img src="../public/images/elijah-hiett-umfpFoKxIVg-unsplash.png" alt="">
-                <label for="">Alison Andrade</label>
-                <b><a href="/" class="resposta">16 respostas ></a></b>   
+            <div class="input">
+                <form>
+                    <img src="../public/images/nick-arnot-AuCrXk0pLWo-unsplash.png" alt="">
+                    <input type="text" class="mensage" placeholder="Escrever mensagem...">
+                </form>
             </div>
-            <label for="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</label>
-        </div>
-    
-    
-    
-    <div class="user">
-    
-        <div class="usuario">
-            <label for="">Você</label>
-            <img src="../public/images/nick-arnot-AuCrXk0pLWo-unsplash.png" alt=""><br>
-        </div>
-        <label for="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</label>
     </div>
-    
-    
-    
-    
-    <!-- Somente para Separar -->
-    
-    <div class="server">
-        <div class="servidor">
-            <img src="../public/images/elijah-hiett-umfpFoKxIVg-unsplash.png" alt="">
-            <label for="">Alison Andrade</label>   
-        </div>
-        <label for="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</label>
-    </div>
-    
-    
-    <div class="user">
-    
-        <div class="usuario">
-            <label for="">Você</label>
-            <img src="../public/images/nick-arnot-AuCrXk0pLWo-unsplash.png" alt=""><br>
-        </div>
-        <label for="">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</label>
-    </div>
-    
-    
-    <!-- Somente para Separar -->
-    
-    
-    
-        <div class="texto">
-            <form>
-                <img src="../public/images/nick-arnot-AuCrXk0pLWo-unsplash.png" alt="">
-                <input type="text" class="mensage">
-                <input type="button" value="Enviar" class="botao">
-            </form>
-    
-        </div>
-    
-    </div>
+   
     
     <style>
-        .user{
+        .user h5{
+            color: #A7B6C4;
+            font-size: 13px;
             text-align: right;
-            margin-top: 2rem;
         }
+        .container {
+            border: 1px solid #FFFFFF;
+            background-color: white;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 15px;
+        }
+        .doctor{
+                display: flex;
+                justify-content: space-between;
+        }
+        .doctor h5{
+            color: #A7B6C4;
+            font-size: 13px;
+        }
+        .doctor a {
+            color: #3AB4D1;
+        }
+        #comments{
+            background-color: #FAFBFC;
+            padding-top: 1px;
+        }
+
         .mensage{
             text-align: left;
         }
-        .texto{
+        .input{
             margin-top: 2rem;   
         }
-        
-        .server{
-            margin-top: 2rem;
+        #comments input {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background: #FFFFFF;
         }
-        .username{
-            margin-bottom: 2rem;
+        #comments ::placeholder{
+            padding-left: 40px;
+            color: #A7B6C4;
         }
-        .usuario{
-            margin-bottom: 1rem;
+        input {
+            outline: 0;
+            border-width: 0 0 2px;
+            border-color: white;
         }
-        .servidor{
-            margin-bottom: 1rem;
-        }
-        input[type=text] {
-            width: 17rem;
-        }
-        .resposta{
-            color: black;
-            margin-left: 7.5rem;
-            font-weight: 100;
-        }
-    
     </style>
