@@ -1,0 +1,10 @@
+/front/.git_OLD
+/back/.DS_Store
+/back/node_modules
+/front/node_modules
+/front/build
+/front/.svelte-kit
+/front/package
+/front/.env
+/front/.env.*
+/front/!.env.example
