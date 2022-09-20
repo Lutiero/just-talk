@@ -27,7 +27,7 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</p>
         </div>
         <div class="doctor">
-            <h5>Dr. Silvia Lima</h5> <a href="/">16 respostas ></a>
+           <span class="dot"></span> <h5>Dr. Silvia Lima</h5> <a href="/">16 respostas ></a>
         </div>
         <!-- Somente para Separar -->
             <div class="input">
@@ -63,6 +63,7 @@
         }
         .doctor a {
             color: #3AB4D1;
+            font-weight: 400;
         }
         #comments{
             background-color: #FAFBFC;

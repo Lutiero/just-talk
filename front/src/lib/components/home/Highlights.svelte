@@ -15,8 +15,8 @@
 			<input type="radio" name="btn" id="radio4" />
 			<input type="radio" name="btn" id="radio5" />
 
-			{#each themes as theme}
-				<div class="images first">
+			{#each themes as theme , i}
+				<div class="{i == 0 ? 'images first' : 'images'}">
 					<img src={theme.thumbnail} alt={theme.title} />
 					<div class="text">
 						<p>{theme.subscribersAmount} pessoas</p>
@@ -135,14 +135,14 @@
 	}
 
 	#radio2:checked ~ .first {
-		margin-left: -15%;
+		margin-left: -400px;
 	}
 
 	#radio3:checked ~ .first {
-		margin-left: -20%;
+		margin-left: -800px;
 	}
 
 	#radio4:checked ~ .first {
-		margin-left: -25%;
+		margin-left: -1200px;
 	}
 </style>
