@@ -1,12 +1,14 @@
-
+<script>
+  export let theme;
+</script>
 <div class="header" id="myHeader">
   <div>
       
   </div>
 
   <div class="title">
-    <h1>Depressão</h1>
-    <span>10 pessoas</span>
+    <h1>{theme.title}</h1>
+    <span>{theme.subscribersAmount} pessoa(s)</span>
   </div>
   <div class="buttomTheme">
     <button> <p>+</p> Entrar nesse grupo</button>

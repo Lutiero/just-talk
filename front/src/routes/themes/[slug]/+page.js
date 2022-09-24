@@ -1,12 +1,15 @@
+/** @type {import('./$types').PageLoad} */
+export async function load({params}) {
+    const myRequest = await fetch(`http://localhost:3000/themes/${params.slug}`,{
+        method: 'GET',
+        headers: {
+            'ContentType': 'application/json'
+        }
+    });
 
-import { error } from '@sveltejs/kit';
-
-/** @type {import('../../../../.svelte-kit/types/src/routes/themes/$types').PageLoad} */
-export const load = async () => {
-	let response = await fetch(`http://localhost:3000/themes${params.slug}`)    
-    response = await response.json();
-    console.log(response);
+    const response = await myRequest.json();
+    
     return {
-        themes: response,
-    }
-};
+      theme: response
+    };
+  }

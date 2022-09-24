@@ -14,7 +14,7 @@
 		{#each themes as theme}
 			<li>
 				<div class="image">
-					<a href="theme/{theme.id}">
+					<a href="themes/{theme.id}">
 						<img src={theme.thumbnail} alt={theme.title} />
 					</a>
 					<span class="image-title"
