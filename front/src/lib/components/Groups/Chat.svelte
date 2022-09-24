@@ -1,94 +1,95 @@
 <script></script>
-    <div id="comments">
 
-            <!-- Somente para Separar -->
-        
-
-
-        
-        <div class="container">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</p>
-        </div>
-        <div class="doctor">
-            <h5>Dr. Silvia Lima</h5> <a href="/">16 respostas ></a>
-        </div>     
-        
-        <!-- Somente para Separar -->
-        
-        <div class="container">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem </p>
-        </div>
-        <div class="user">
-            <h5>Você</h5>
-        </div>
-        
-
-        <div class="container">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</p>
-        </div>
-        <div class="doctor">
-           <span class="dot"></span> <h5>Dr. Silvia Lima</h5> <a href="/">16 respostas ></a>
-        </div>
-        <!-- Somente para Separar -->
-            <div class="input">
-                <form>
-                    <img src="../public/images/nick-arnot-AuCrXk0pLWo-unsplash.png" alt="">
-                    <input type="text" class="mensage" placeholder="Escrever mensagem...">
-                </form>
-            </div>
+<div id="chat">
+    <div class="comments">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</p>
     </div>
+    <div class="peoplesChat">
+        <h5>Dr. Silvia Lima</h5> <a href="/">16 respostas ></a>
+    </div>     
+    <div class="comments">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem </p>
+    </div>
+    <div class="user">
+        <h5>Você</h5><img src="https://iili.io/sRBKo7.png">
+    </div>
+    <div class="comments">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</p>
+    </div>
+    <div class="peoplesChat">
+        <img src="https://iili.io/sRBKo7.png"><h5>Dr. Silvia Lima </h5> <a href="/">16 respostas ></a>
+    </div>
+    <div class="input">
+        <form>
+            <img src="../public/images/nick-arnot-AuCrXk0pLWo-unsplash.png" alt="">
+            <input type="text" class="mensage" placeholder="Escrever mensagem...">
+        </form>
+    </div>
+</div>
    
     
     <style>
+        .user{
+            white-space: nowrap;
+            text-align: right;
+        }
+        .user img{
+            height: 24px;
+            width: 24px;
+            padding-right: 15px;
+        }
         .user h5{
+            display: inline;
             color: #A7B6C4;
             font-size: 13px;
             text-align: right;
+            padding-right: 5px;
         }
-        .container {
+        .peoplesChat img{
+            height: 24px;
+            widows: 24px;
+            padding-right: 5px;
+        }
+        .peoplesChat{
+            display: flex;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .peoplesChat h5{
+            color: #A7B6C4;
+            font-size: 13px;
+            margin: 0;
+        }
+        .peoplesChat a {
+            color: #3AB4D1;
+            font-weight: 400;
+        }
+        #chat{
+            background-color: #FAFBFC;
+            padding-top: 1px;
+        }
+        #chat ::placeholder{
+            padding-left: 40px;
+            color: #A7B6C4;
+        }
+        #chat input {
+            width: 100%;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background: #FFFFFF;
+            outline: 0;
+            border-width: 0 0 2px;
+            border-color: white;
+        }
+        .comments {
             border: 1px solid #FFFFFF;
             background-color: white;
             border-radius: 5px;
             padding: 10px;
             margin: 10px 15px;
         }
-        .doctor{
-                display: flex;
-                justify-content: space-between;
-        }
-        .doctor h5{
-            color: #A7B6C4;
-            font-size: 13px;
-            margin: 0;
-        }
-        .doctor a {
-            color: #3AB4D1;
-            font-weight: 400;
-        }
-        #comments{
-            background-color: #FAFBFC;
-            padding-top: 1px;
-        }
-
         .mensage{
             text-align: left;
         }
-        .input{
-            margin-top: 2rem;   
-        }
-        #comments input {
-            width: 100%;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            background: #FFFFFF;
-        }
-        #comments ::placeholder{
-            padding-left: 40px;
-            color: #A7B6C4;
-        }
-        input {
-            outline: 0;
-            border-width: 0 0 2px;
-            border-color: white;
-        }
     </style>
+
