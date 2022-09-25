@@ -20,24 +20,30 @@
         <img src="https://iili.io/sRBKo7.png"><h5>Dr. Silvia Lima </h5> <a href="/">16 respostas ></a>
     </div>
 
-    <form>
-        <div class="input">
-            <img src="https://iili.io/sRCMdb.png">
-            <input type="text" class="mensage" placeholder="Escrever mensagem...">
-        </div>
-    </form>
+    <div class="inputSpace">
+        <form>
+            <div class="input">
+                <img src="https://iili.io/sRCMdb.png">
+                <input type="text" class="mensage" placeholder="Escrever mensagem...">
+            </div>
+        </form>
+    </div>
 </div>
    
     <style>
+        .inputSpace{
+            margin-top: 20px;
+        }
         .input{
             position: relative;
-            padding-top: 20px;
+            width: 100%;
+            background-color: white;
         }
         .input img{
             position: absolute;
             height: 30px;
             width: 30px;
-            top: 23px;
+            top: 5px;
             left: 15px;
         }
         .user{
@@ -91,7 +97,9 @@
             outline: 0;
             border-width: 0 0 2px;
             border-color: white;
-            padding-left: 50px;
+            padding-left: 60px;
+            box-sizing: border-box;
+            padding-right: 15px;
         }
         .comments {
             border: 1px solid #FFFFFF;
