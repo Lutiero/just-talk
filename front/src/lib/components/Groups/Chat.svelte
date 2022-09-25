@@ -29,10 +29,10 @@
         </form>
     </div>
 </div>
-   
     <style>
         .inputSpace{
             margin-top: 20px;
+            
         }
         .input{
             position: relative;
@@ -53,7 +53,7 @@
         .user img{
             height: 24px;
             width: 24px;
-            padding-right: 15px;
+            padding-right: 14px;
         }
         .user h5{
             display: inline;
