@@ -7,6 +7,11 @@
   </div>
 
   <div class="title">
+    <div class="return">
+      <a href="/home">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAARklEQVRIiWNgGAWjYBRgAw20Nvw/rQ2niQXIhlMTMzBBLfhOC1ejg3IGGgYRuiVUA8xo/KMMDAyMDAwMB6hpySgYBSMdAADD2iBWVAL7hAAAAABJRU5ErkJggg==">
+      </a>
+    </div>
     <h1>{theme.title}</h1>
     <span>{theme.subscribersAmount} pessoa(s)</span>
   </div>
@@ -17,7 +22,15 @@
 
 
 <style>
-  
+.return {
+  text-align: left;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.title{
+  position: relative;
+}
 #myHeader{
   background-image: url("/images/depressao.png");
   background-repeat: no-repeat;

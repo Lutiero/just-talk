@@ -11,7 +11,7 @@
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem </p>
     </div>
     <div class="user">
-        <h5>Você</h5><img src="https://iili.io/sRBKo7.png">
+        <h5>Você</h5><img src="https://iili.io/sRCMdb.png">
     </div>
     <div class="comments">
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit minima voluptatem exercitationem doloribus necessitatibus, magnam ut ullam tempora dolores incidunt, harum ipsa.</p>
@@ -19,16 +19,27 @@
     <div class="peoplesChat">
         <img src="https://iili.io/sRBKo7.png"><h5>Dr. Silvia Lima </h5> <a href="/">16 respostas ></a>
     </div>
-    <div class="input">
-        <form>
-            <img src="../public/images/nick-arnot-AuCrXk0pLWo-unsplash.png" alt="">
+
+    <form>
+        <div class="input">
+            <img src="https://iili.io/sRCMdb.png">
             <input type="text" class="mensage" placeholder="Escrever mensagem...">
-        </form>
-    </div>
+        </div>
+    </form>
 </div>
    
-    
     <style>
+        .input{
+            position: relative;
+            padding-top: 20px;
+        }
+        .input img{
+            position: absolute;
+            height: 30px;
+            width: 30px;
+            top: 23px;
+            left: 15px;
+        }
         .user{
             white-space: nowrap;
             text-align: right;
@@ -59,6 +70,7 @@
             color: #A7B6C4;
             font-size: 13px;
             margin: 0;
+            padding-right: 50px;
         }
         .peoplesChat a {
             color: #3AB4D1;
@@ -69,7 +81,6 @@
             padding-top: 1px;
         }
         #chat ::placeholder{
-            padding-left: 40px;
             color: #A7B6C4;
         }
         #chat input {
@@ -80,6 +91,7 @@
             outline: 0;
             border-width: 0 0 2px;
             border-color: white;
+            padding-left: 50px;
         }
         .comments {
             border: 1px solid #FFFFFF;
