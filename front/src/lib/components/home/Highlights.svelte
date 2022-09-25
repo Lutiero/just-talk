@@ -15,9 +15,9 @@
 			<input type="radio" name="btn" id="radio4" />
 			<input type="radio" name="btn" id="radio5" />
 
-			{#each themes as theme , i}
-				<div class="{i == 0 ? 'images first' : 'images'}">
-					<img src={theme.thumbnail} alt={theme.title} />
+			{#each themes as theme, i}
+				<div class={i == 0 ? 'images first' : 'images'}>
+					<img src={theme.largeImage} alt={theme.title} />
 					<div class="text">
 						<p>{theme.subscribersAmount} pessoas</p>
 					</div>

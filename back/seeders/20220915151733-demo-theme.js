@@ -5,8 +5,8 @@ module.exports = {
       {
         title: 'Depressão',
         subscribersAmount: 10,
-        thumbnail: 'https://images2.imgbox.com/66/4e/rFfonZQM_o.png',
-        imageHighlighted: '',
+        smallImage: 'https://iili.io/sRosgn.png',
+        largeImage: 'https://iili.io/sRoPft.png',
         highlighted: true,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -15,8 +15,8 @@ module.exports = {
       {
         title: 'Autoestima',
         subscribersAmount: 28,
-        thumbnail: 'https://images2.imgbox.com/96/1a/PhYIbE34_o.png',
-        imageHighlighted: '',
+        smallImage: 'https://iili.io/sRorWN.png',
+        largeImage: 'https://iili.io/sRoSbR.png',
         highlighted: true,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -25,9 +25,9 @@ module.exports = {
       {
         title: 'Relacionamento',
         subscribersAmount: 33,
-        thumbnail: 'https://images2.imgbox.com/3a/9a/RUHVLAX9_o.png',
-        imageHighlighted: '',
-        highlighted: false,
+        smallImage: 'https://iili.io/sRxF5b.png',
+        largeImage: 'https://iili.io/sRopX2.png',
+        highlighted: true,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -35,9 +35,9 @@ module.exports = {
       {
         title: 'Sono',
         subscribersAmount: 14,
-        thumbnail: 'https://images2.imgbox.com/19/a5/dJw6qfyT_o.png',
-        imageHighlighted: '',
-        highlighted: false,
+        smallImage: 'https://iili.io/sRxnLB.png',
+        largeImage: 'https://iili.io/sRxCXV.png',
+        highlighted: true,
         createdAt: new Date(),
         updatedAt: new Date()
       },
