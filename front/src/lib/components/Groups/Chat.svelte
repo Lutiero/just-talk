@@ -53,7 +53,7 @@
         .user img{
             height: 24px;
             width: 24px;
-            padding-right: 14px;
+            padding-right: 15px;
         }
         .user h5{
             display: inline;
