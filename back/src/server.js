@@ -2,12 +2,15 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 const themes = require('../routes/themes');
+const users = require('../routes/users');
 
 app.use(express.json());
 app.use(cors());
 
 //Routes
 app.use('/themes', themes);
+
+app.use('/users', users);
 
 
 app.listen(3000, () => {

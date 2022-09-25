@@ -15,7 +15,7 @@
 			<li>
 				<div class="image">
 					<a href="themes/{theme.id}">
-						<img src={theme.thumbnail} alt={theme.title} />
+						<img src={theme.smallImage} alt={theme.title} />
 					</a>
 					<span class="image-title"
 						>{theme.title} <span class="image-descrition">{theme.subscribersAmount} pessoas</span>

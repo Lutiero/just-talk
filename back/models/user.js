@@ -3,26 +3,24 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Theme extends Model {
+  class User extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Theme.belongsToMany(models.User, {through: 'ThemeUser'})
-      Theme.hasMany(models.Topic)
+      User.belongsToMany(models.Theme, {through: 'ThemeUser'})
     }
   }
-  Theme.init({
-    title: DataTypes.STRING,
-    subscribersAmount: DataTypes.INTEGER,
-    smallImage: DataTypes.STRING,
-    largeImage: DataTypes.STRING,
-    highlighted: DataTypes.BOOLEAN
+  User.init({
+    name: DataTypes.STRING,
+    email: DataTypes.STRING,
+    imageProfile: DataTypes.STRING,
+    isDoctor: DataTypes.BOOLEAN
   }, {
     sequelize,
-    modelName: 'Theme',
+    modelName: 'User',
   });
-  return Theme;
+  return User;
 };
