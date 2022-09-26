@@ -18,7 +18,7 @@ export async function load({params}) {
 
     const topicResponse = await myTopicRequest.json();
 
-    const myRepliesRequest = await fetch(`http://localhost:3000/themes/${params.slug}/topics/${params.slug}/replies`, {
+    const myRepliesRequest = await fetch(`http://localhost:3000/themes/${params.slug}/topics/replies`, {
       method: 'GET',
       headers: {
         'ContentType': 'application/json'
