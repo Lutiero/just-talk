@@ -4,7 +4,7 @@ module.exports = {
 
       {
         title: 'Depressão',
-        subscribersAmount: 10,
+        subscribersAmount: 1,
         smallImage: 'https://iili.io/sRosgn.png',
         largeImage: 'https://iili.io/sRoPft.png',
         highlighted: true,
@@ -14,7 +14,7 @@ module.exports = {
 
       {
         title: 'Autoestima',
-        subscribersAmount: 28,
+        subscribersAmount: 1,
         smallImage: 'https://iili.io/sRorWN.png',
         largeImage: 'https://iili.io/sRoSbR.png',
         highlighted: true,
@@ -24,7 +24,7 @@ module.exports = {
 
       {
         title: 'Relacionamento',
-        subscribersAmount: 33,
+        subscribersAmount: 0,
         smallImage: 'https://iili.io/sRxF5b.png',
         largeImage: 'https://iili.io/sRopX2.png',
         highlighted: true,
@@ -34,7 +34,7 @@ module.exports = {
 
       {
         title: 'Sono',
-        subscribersAmount: 14,
+        subscribersAmount: 0,
         smallImage: 'https://iili.io/sRxnLB.png',
         largeImage: 'https://iili.io/sRxCXV.png',
         highlighted: true,
