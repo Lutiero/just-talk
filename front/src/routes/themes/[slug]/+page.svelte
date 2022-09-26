@@ -7,5 +7,5 @@
 
 <div>
 	<Topic theme={data.theme} />
-	<Chat />
+	<Chat topics={data.topics} replies={data.replies} />
 </div>
