@@ -8,13 +8,21 @@ export async function load({params}) {
         'ContentType': 'application/json'
       }
     });
+
+    const myRepliesRequest = fetch(`http://localhost:3000/topics/${params.slug}`, {
+      method: 'GET',
+      headers: {
+        'ContentType': 'application/json'
+      }
+    });
     
         
-    const requests = await Promise.all([myTopicRequest])
-    const responses = await Promise.all([requests[0].json()]);
+    const requests = await Promise.all([myTopicRequest, myRepliesRequest])
+    const responses = await Promise.all([requests[0].json(),requests[1].json() ]);
   
     return {
       topic: responses[0],
+      replies: responses[1]
     };
   }
 

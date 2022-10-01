@@ -1,11 +1,11 @@
 <script>
-	import Topic from '$lib/components/Groups/Topic.svelte';
-	import Chat from '$lib/components/Groups/Chat.svelte';
+	import Theme from '$lib/components/Groups/Theme.svelte';
+	import Topics from '$lib/components/Groups/Topics.svelte';
 
 	export let data;
 </script>
 
 <div>
-	<Topic theme={data.theme} />
-	<Chat topics={data.topics}/>
+	<Theme theme={data.theme} />
+	<Topics topics={data.topics}/>
 </div>

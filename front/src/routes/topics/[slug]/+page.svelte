@@ -1,11 +1,11 @@
 <script>
-	import ChatOnly from '$lib/components/Groups/ChatOnly.svelte';
+	import Topic from '$lib/components/Groups/Topic.svelte';
 	import Replies from '$lib/components/Groups/Replies.svelte';
     import Form from '$lib/components/Form/Form.svelte';
 	export let data;
 </script>
 
-<ChatOnly topic={data.topic}/>
+<Topic topic={data.topic}/>
 
 <Replies />
 <Form />
