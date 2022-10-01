@@ -1,26 +1,20 @@
 <script>
 	export let topics;
-    export let replies;
 </script>
 
 <div class="chat">
 	{#each topics as topic}
 		<div class="comments">
+            <a href="/topic/{topic.id}">
 			<p>{topic.content}</p>
+            </a>
 		</div>
 		<div class="peoplesChat">
 			<h5>Dr. Silvia Lima</h5>
-			<a href="/">{topic.repliesAmount} respostas ></a>
+        <a href="/">
+			{topic.repliesAmount === 0 ? '' : topic.repliesAmount + 'respostas'}
+        </a>
 		</div>
-        {#each replies as reply}
-             <div class="comments">
-                 <p>{reply.content}</p>
-             </div>
-             <div class="user">
-                 <h5>Você</h5>
-                 <img src="https://iili.io/sRCMdb.png" alt="user" />
-             </div>
-        {/each}
         {/each}
 	<div class="inputSpace">
 		<form>
@@ -48,40 +42,18 @@
 		top: 5px;
 		left: 15px;
 	}
-	.user {
-		white-space: nowrap;
-		text-align: right;
-	}
-	.user img {
-		height: 24px;
-		width: 24px;
-		padding-right: 15px;
-	}
-	.user h5 {
-		display: inline;
-		color: #a7b6c4;
-		font-size: 13px;
-		text-align: right;
-		padding-right: 5px;
-	}
-	.peoplesChat img {
-		height: 24px;
-		widows: 24px;
-		padding-right: 5px;
-	}
+
 	.peoplesChat {
 		display: flex;
 		padding-left: 15px;
 		padding-right: 15px;
 	}
 	.peoplesChat h5 {
-		color: #a7b6c4;
 		font-size: 13px;
 		margin: 0;
 		padding-right: 50px;
 	}
 	.peoplesChat a {
-		color: #3ab4d1;
 		font-weight: 400;
 	}
 	.chat {
@@ -89,7 +61,7 @@
 		padding-top: 1px;
 	}
 	.chat ::placeholder {
-		color: #a7b6c4;
+		color: #343342;
 	}
 	.chat input {
 		width: 100%;
@@ -113,4 +85,12 @@
 	.mensage {
 		text-align: left;
 	}
+
+    a {
+        color: #343342;
+    }
+
+    a:visited {
+        color: #343342;
+    }
 </style>
