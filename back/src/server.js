@@ -4,7 +4,6 @@ const app = express();
 const themes = require('../routes/themes');
 const users = require('../routes/users');
 const topics = require('../routes/topics')
-const replies = require('../routes/replies')
 
 app.use(express.json());
 app.use(cors());

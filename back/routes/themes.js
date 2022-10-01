@@ -25,26 +25,5 @@ router.get('/:themeId/topics/', async (req, res) => {
     res.status(200).json(topic)
 });
 
-router.get('/:themeId/topics/replies', async (req, res) => {
-    const {themeId} = req.params;
-    const topics = await Topic.findAll({where: {themeId: {[Op.eq]: themeId}},});
-    let auxTopic;
-    
-    const topicIds = topics.map((topic) => {
-        return {
-            topic: {
-                id: topic.id
-            }
-        }
-    });
-
-    console.log(topicIds);
-
-
-    const replies = await Reply.findAll({where: {topicId: {[Op.eq]: themeId}},});
-
-
-    res.status(200).json(replies)
-});
 
 module.exports = router;

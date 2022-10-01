@@ -7,5 +7,5 @@
 
 <Topic topic={data.topic}/>
 
-<Replies />
+<Replies replies={data.replies} />
 <Form />

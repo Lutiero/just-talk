@@ -9,7 +9,7 @@ export async function load({params}) {
       }
     });
 
-    const myRepliesRequest = fetch(`http://localhost:3000/topics/${params.slug}`, {
+    const myRepliesRequest = fetch(`http://localhost:3000/topics/${params.slug}/replies`, {
       method: 'GET',
       headers: {
         'ContentType': 'application/json'

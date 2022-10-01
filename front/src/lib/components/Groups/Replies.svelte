@@ -2,4 +2,6 @@
 	export let replies;
 </script>
 
-<div>replies</div>
+{#each replies as reply}
+	<p>{reply.content}</p>
+{/each}
