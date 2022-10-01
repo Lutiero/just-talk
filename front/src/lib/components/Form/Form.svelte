@@ -24,7 +24,7 @@
 		left: 15px;
 	}
 
-    input {
+	input {
 		width: 100%;
 		padding-top: 10px;
 		padding-bottom: 10px;
@@ -37,7 +37,8 @@
 		padding-right: 15px;
 	}
 
-    .message {
+	.message {
 		text-align: left;
+		color: #343342;
 	}
 </style>
