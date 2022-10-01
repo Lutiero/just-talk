@@ -1,8 +1,8 @@
 <div class="inputSpace">
-	<form>
+	<form method="POST" action="?/topic">
 		<div class="input">
 			<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
-			<input type="text" class="message" placeholder="Escrever mensagem..." />
+			<input type="text" name= "content" class="message" placeholder="Escrever mensagem..." />
 		</div>
 	</form>
 </div>
