@@ -1,10 +1,9 @@
 <script>
-	import Form from '$lib/components/Form/Form.svelte';
-	export let topics;
+	export let topic;
 </script>
 
 <div class="chat">
-	{#each topics as topic}
+
 		<div class="comments">
             <a href="/topics/{topic.id}">
 			<p>{topic.content}</p>
@@ -12,15 +11,12 @@
 		</div>
 		<div class="peoplesChat">
 			<h5>Dr. Silvia Lima</h5>
-        <a href="/">
-			{topic.repliesAmount === 0 ? '' : topic.repliesAmount + 'respostas'}
-        </a>
 		</div>
-        {/each}
-	<Form />
+		
 </div>
 
 <style>
+
 
 	.peoplesChat {
 		display: flex;
@@ -42,6 +38,7 @@
 	.chat ::placeholder {
 		color: #343342;
 	}
+
 	.comments {
 		border: 1px solid #ffffff;
 		background-color: white;
@@ -49,6 +46,7 @@
 		padding: 10px;
 		margin: 10px 15px;
 	}
+	
 
     a {
         color: #343342;
