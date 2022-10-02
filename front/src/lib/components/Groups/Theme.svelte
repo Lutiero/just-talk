@@ -2,14 +2,14 @@
 	export let theme;
 </script>
 
-<div class="header" id="myHeader" style="background-image: url('/images/depressao.png')">
+<div class="header" id="myHeader" style="background-image: url('{theme.largeImage}')">
 	<div />
 
 	<div class="title">
 		<div class="return">
 			<a href="/home">
 				<img
-					src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABmJLR0QA/wD/AP+gvaeTAAAARklEQVRIiWNgGAWjYBRgAw20Nvw/rQ2niQXIhlMTMzBBLfhOC1ejg3IGGgYRuiVUA8xo/KMMDAyMDAwMB6hpySgYBSMdAADD2iBWVAL7hAAAAABJRU5ErkJggg=="
+					src="../icons/ic_back.svg"
 				/>
 			</a>
 		</div>

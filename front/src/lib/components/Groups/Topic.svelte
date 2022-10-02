@@ -3,33 +3,40 @@
 </script>
 
 <div class="chat">
-
+<div class="person">
+	<img src="../icons/ic_backblack.svg" style=""/>
+	<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
+	<h5>Dr. Silvia Lima</h5> 
+</div>
 		<div class="comments">
             <a href="/topics/{topic.id}">
 			<p>{topic.content}</p>
             </a>
 		</div>
-		<div class="peoplesChat">
-			<h5>Dr. Silvia Lima</h5>
+		<div class="viewsCount">
+			<h5>{topic.repliesAmount} respostas</h5>
 		</div>
 		
 </div>
 
 <style>
-
-
-	.peoplesChat {
+	.person img{
+		height: 24px;
+		width: 24px;
+	}
+	.person{
 		display: flex;
+		align-items: center;
+		gap: 10px;
 		padding-left: 15px;
-		padding-right: 15px;
+		background-color: white;
+		margin-bottom: -20px;
+		color: #A7B6C4;
 	}
-	.peoplesChat h5 {
-		font-size: 13px;
-		margin: 0;
-		padding-right: 50px;
-	}
-	.peoplesChat a {
-		font-weight: 400;
+	.viewsCount{
+		display: flex;
+		justify-content: space-evenly;
+		color: #A7B6C4;
 	}
 	.chat {
 		background-color: #fafbfc;
@@ -44,7 +51,6 @@
 		background-color: white;
 		border-radius: 5px;
 		padding: 10px;
-		margin: 10px 15px;
 	}
 	
 
