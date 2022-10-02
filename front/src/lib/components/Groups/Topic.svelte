@@ -48,8 +48,9 @@
 	}
 	
 
-    a {
+	.comments a {
         color: #343342;
+		font-weight: 300;
     }
 
     a:visited {
