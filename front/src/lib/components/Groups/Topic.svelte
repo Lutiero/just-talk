@@ -4,7 +4,8 @@
 
 <div class="chat">
 <div class="person">
-	<img src="../icons/ic_backblack.svg" style=""/>
+	<a href="">	<img src="../icons/ic_backblack.svg" style=""/>
+	</a>
 	<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
 	<h5>Dr. Silvia Lima</h5> 
 </div>
