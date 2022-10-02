@@ -2,7 +2,7 @@
 	export let theme;
 </script>
 
-<div class="header" id="myHeader">
+<div class="header" id="myHeader" style="background-image: url('/images/depressao.png')">
 	<div />
 
 	<div class="title">
@@ -35,7 +35,6 @@
 		position: relative;
 	}
 	#myHeader {
-		background-image: url('/images/depressao.png');
 		background-repeat: no-repeat;
 		background-size: cover;
 		height: 250px;
