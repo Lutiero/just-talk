@@ -11,6 +11,7 @@
             </a>
 		</div>
 		<div class="peoplesChat">
+			<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
 			<h5>Dr. Silvia Lima</h5>
         <a href="/">
 			{topic.repliesAmount === 0 ? '' : topic.repliesAmount + 'respostas'}
@@ -26,6 +27,14 @@
 		display: flex;
 		padding-left: 15px;
 		padding-right: 15px;
+		align-items: center;
+		color: #A7B6C4;
+		font-size: 13px;
+	}
+	.peoplesChat img {
+		width: 24px;
+		height: 24px;
+		margin-right: 10px;
 	}
 	.peoplesChat h5 {
 		font-size: 13px;
