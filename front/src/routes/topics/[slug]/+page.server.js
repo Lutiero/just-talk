@@ -1,3 +1,6 @@
 export const actions = {
-  replies: console.log('aaaaaaaaaaa')
+  replies: () => {
+    console.log('aaaaaaa');
+    return {a: 'a'}
+  }
 }
