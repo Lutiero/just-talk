@@ -22,7 +22,7 @@ module.exports = {
 
       {
         content: 'Olá, este é o TERCEIRO tópico do aplicativo, vamos discutir as relações erradas no banco de dados',
-        repliesAmount: 0,
+        repliesAmount: 1,
         themeId: 3,
         userId: 3,
         createdAt: new Date(),

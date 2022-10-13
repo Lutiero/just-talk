@@ -23,6 +23,15 @@ router.post('/:topicId/replies', async (req, res) => {
         userId: 1,
         topicId: topicId
     });
+
+
+    const topic = await Topic.findOne({ where: { id: topicId } });
+    const newRepliesAmount = topic.repliesAmount + 1;
+    await Topic.update({ repliesAmount: newRepliesAmount }, {
+        where: {
+          id: topicId
+        }
+      });
     res.status(201).json(newReply);
 });
 
