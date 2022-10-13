@@ -4,7 +4,7 @@
 
 <div class="chat">
 <div class="person">
-	<a href="">	<img src="../icons/ic_backblack.svg" style=""/>
+	<a href="/themes/{topic.themeId}">	<img src="../icons/ic_backblack.svg" style=""/>
 	</a>
 	<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
 	<h5>Dr. Silvia Lima</h5> 
