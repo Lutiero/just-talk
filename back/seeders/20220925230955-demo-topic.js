@@ -4,7 +4,7 @@ module.exports = {
 
       {
         content: 'Olá, este é o PRIMEIRO tópico do aplicativo, vamos discutir as relações erradas no banco de dados',
-        repliesAmount: 0,
+        repliesAmount: 2,
         themeId: 1,
         userId: 1,
         createdAt: new Date(),
@@ -13,7 +13,7 @@ module.exports = {
 
       {
         content: 'Olá, este é o SEGUNDO tópico do aplicativo, vamos discutir as relações erradas no banco de dados',
-        repliesAmount: 0,
+        repliesAmount: 2,
         themeId: 2,
         userId: 2,
         createdAt: new Date(),

@@ -13,7 +13,18 @@ router.get('/:topicId/replies', async (req, res) => {
     const { topicId } = req.params;
     const replies = await Reply.findAll({where: {topicId: {[Op.eq]: topicId}},});
     res.status(200).json(replies)
-})
+});
+
+router.post('/:topicId/replies', async (req, res) => {
+    const { topicId } = req.params;
+    const content = req.body.content;
+    const newReply = Reply.create({
+        content: content,
+        userId: 1,
+        topicId: topicId
+    });
+    res.status(201).json(newReply);
+});
 
 
 module.exports = router;

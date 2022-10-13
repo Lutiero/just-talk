@@ -6,29 +6,28 @@
 <div class="chat">
 	{#each topics as topic}
 		<div class="comments">
-            <a href="/topics/{topic.id}">
-			<p>{topic.content}</p>
-            </a>
+			<a href="/topics/{topic.id}">
+				<p>{topic.content}</p>
+			</a>
 		</div>
 		<div class="peoplesChat">
 			<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
 			<h5>Dr. Silvia Lima</h5>
-        <a href="/">
-			{topic.repliesAmount === 0 ? '' : topic.repliesAmount + 'respostas'}
-        </a>
+			<a href="/topics/{topic.id}">
+				{topic.repliesAmount === 0 ? '' : topic.repliesAmount + ' respostas'}
+			</a>
 		</div>
-        {/each}
+	{/each}
 	<Form />
 </div>
 
 <style>
-
 	.peoplesChat {
 		display: flex;
 		padding-left: 15px;
 		padding-right: 15px;
 		align-items: center;
-		color: #A7B6C4;
+		color: #a7b6c4;
 		font-size: 13px;
 	}
 	.peoplesChat img {
@@ -59,12 +58,12 @@
 		margin: 10px 15px;
 	}
 
-    .comments a {
-        color: #343342;
+	.comments a {
+		color: #343342;
 		font-weight: 300;
-    }
+	}
 
-    a:visited {
-        color: #343342;
-    }
+	a:visited {
+		color: #343342;
+	}
 </style>

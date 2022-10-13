@@ -10,10 +10,10 @@
 <Replies replies={data.replies} />
 
 <div class="inputSpace">
-	<form method="POST" action="?/replies">
+	<form method="POST" action="?/add">
 		<div class="input">
 			<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
-			<input type="text" name= "content" class="message" placeholder="Escrever mensagem..." />
+			<input type="text" name="content" class="message" placeholder="Escrever mensagem..." />
 		</div>
 	</form>
 </div>
@@ -53,4 +53,3 @@
 		color: #343342;
 	}
 </style>
-
