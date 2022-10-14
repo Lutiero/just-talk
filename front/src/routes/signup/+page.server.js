@@ -9,7 +9,7 @@ export const actions = {
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
 
-      let myRequest = await fetch(`http://localhost:3000/users/`,{
+      let myRequest = await fetch(`http://localhost:3000/users/signup`,{
         method: 'POST',
         headers: myHeaders,
         body: JSON.stringify(newUser)
