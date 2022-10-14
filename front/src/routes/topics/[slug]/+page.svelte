@@ -1,7 +1,6 @@
 <script>
 	import Topic from '$lib/components/Groups/Topic.svelte';
 	import Replies from '$lib/components/Groups/Replies.svelte';
-	import Form from '$lib/components/Form/Form.svelte';
 	export let data;
 </script>
 
@@ -10,7 +9,7 @@
 <Replies replies={data.replies} />
 
 <div class="inputSpace">
-	<form method="POST" action="?/add">
+	<form method="POST" action="?/addReply">
 		<div class="input">
 			<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
 			<input type="text" name="content" class="message" placeholder="Escrever mensagem..." />
