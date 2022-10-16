@@ -3,10 +3,19 @@ const cors = require('cors');
 const app = express();
 const themes = require('../routes/themes');
 const users = require('../routes/users');
-const topics = require('../routes/topics')
+const topics = require('../routes/topics');
+const session = require("express-session");
 
 app.use(express.json());
 app.use(cors());
+
+//Session
+app.use(session({
+    secret: '2-TAP-RAD-UCDB',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true, maxAge:  600000 }
+}));
 
 //Routes
 app.use('/themes', themes);
