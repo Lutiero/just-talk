@@ -4,7 +4,7 @@
 	<form action="?/signup" method="POST">
 		<div class="form-group">
 			<label for="name">Nome</label>
-			<input name="name" type="text" placeholder="Digite seu nome completo..." />
+			<input class="input" name="name" type="text" placeholder="Digite seu nome completo..." />
 		</div>
 		<div class="form-group">
 			<label for="email">Email</label>
@@ -14,18 +14,19 @@
 			<label for="password">Password</label>
 			<input name="password" type="password" placeholder="Digite sua senha..." />
 		</div>
-		<div class="form-group btn">
-			<button>Criar nova conta</button>
+		<div class="form-group button">
+			<button class="buttoncreate">Criar nova conta</button>
 		</div>
 	</form>
 </div>
 
 <style>
 	input {
-		background-color: white;
+		background-color: #fafbfc;
 		color: black;
 		padding: 10px 15px;
-		border-radius: 4px;
+		border: none;
+		border-bottom: 1px solid #3333;
 	}
 
 	.form-group {
@@ -33,10 +34,15 @@
 		align-items: flex-start;
 		flex-direction: column;
 		gap: 5px;
+		margin-top: 5px;
 	}
 
-	.form-group.btn {
+	.form-group.button {
 		align-items: center;
 		padding-top: 5px;
+	}
+
+	.buttoncreate {
+		background-color: rgb(66, 44, 208);
 	}
 </style>

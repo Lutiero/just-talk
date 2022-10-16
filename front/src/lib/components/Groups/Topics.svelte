@@ -1,5 +1,6 @@
 <script>
 	import Form from '$lib/components/Form/Form.svelte';
+
 	export let topics;
 </script>
 
@@ -18,7 +19,6 @@
 			</a>
 		</div>
 	{/each}
-	<Form />
 </div>
 
 <style>
@@ -66,4 +66,5 @@
 	a:visited {
 		color: #343342;
 	}
+
 </style>
