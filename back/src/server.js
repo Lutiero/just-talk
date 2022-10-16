@@ -14,14 +14,12 @@ app.use(session({
     secret: '2-TAP-RAD-UCDB',
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: true, maxAge:  600000 }
+    cookie: { secure: true, maxAge:  60000 }
 }));
 
 //Routes
-app.use('/themes', themes);
-
-app.use('/users', users);
-
+app.use('/themes', themes); 
+app.use('/users', users); 
 app.use('/topics', topics);
 
 
