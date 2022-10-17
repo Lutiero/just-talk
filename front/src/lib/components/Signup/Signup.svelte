@@ -19,7 +19,7 @@
 		</div>
 	</form>
 	<div class="entrar">
-		<span>Já possui conta? <a href="">Entrar</a></span>
+		<span>Já possui conta? <a href="http://127.0.0.1:5173/Login">Entrar</a></span>
 	</div>
 </div>
 
