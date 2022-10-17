@@ -33,7 +33,7 @@
 	}
 
 	.entrar a{
-		color: black;
+		color: #3AB4D1;
 	}
 
 	input::placeholder {
