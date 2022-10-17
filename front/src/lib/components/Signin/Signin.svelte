@@ -22,7 +22,7 @@
 			</div>
 
 			<div class="card-footer">
-				<a href="#" class="link">Esqueci minha senha</a>
+				<a href="./recover" class="link">Esqueci minha senha</a>
 				<button class="submit">Entrar</button>
 			</div>
 
