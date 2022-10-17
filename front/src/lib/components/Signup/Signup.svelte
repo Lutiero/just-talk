@@ -19,26 +19,29 @@
 		</div>
 	</form>
 	<div class="entrar">
-		<span>Já possui conta? <a href="http://127.0.0.1:5173/Login">Entrar</a></span>
+		<span>Já possui conta? <a href="/Signin">Entrar</a></span>
 	</div>
 </div>
 
 <style>
-
-	.entrar{
+	input {
+		background-color: white;
+		color: black;
+	}
+	.entrar {
 		font: normal normal normal 16px/22px Gilroy;
-		color: #A7B6C4;
+		color: #a7b6c4;
 		text-align: center;
 		padding-top: 20px;
 	}
 
-	.entrar a{
-		color: #3AB4D1;
+	.entrar a {
+		color: #3ab4d1;
 	}
 
 	input::placeholder {
 		font: normal normal normal 16px/22px Gilroy;
-		color: #A7B6C4;
+		color: #a7b6c4;
 	}
 
 	.signup p {
@@ -48,16 +51,16 @@
 
 	.signup span {
 		font: normal normal normal 16px/22px Gilroy;
-		color: #A7B6C4;
+		color: #a7b6c4;
 	}
 
-	.signup label{
+	.signup label {
 		font: normal normal bold 18px/24px Gilroy;
 	}
 
 	.signup input {
 		border: none;
-		border-bottom: 2px solid #3AB4D1;
+		border-bottom: 2px solid #3ab4d1;
 		width: 100%;
 		box-shadow: none;
 	}
@@ -76,9 +79,10 @@
 	}
 
 	.signup .buttoncreate {
-		background: transparent linear-gradient(100deg, #3AB4D1 0%, #2596B1 100%) 0% 0% no-repeat padding-box;
-		box-shadow: 0px 4px 16px #3AB4D152;
-		border: 1px solid #2CA8C6;
+		background: transparent linear-gradient(100deg, #3ab4d1 0%, #2596b1 100%) 0% 0% no-repeat
+			padding-box;
+		box-shadow: 0px 4px 16px #3ab4d152;
+		border: 1px solid #2ca8c6;
 		border-radius: 8px;
 		width: 100%;
 		padding: 15px 0 15px 0;
@@ -86,5 +90,4 @@
 		color: white;
 		font: normal normal bold 18px/26px Gilroy;
 	}
-
 </style>

@@ -42,6 +42,9 @@
 				</div>
 			</div>
 		</div>
+		<p>
+			Não possui uma conta? <a href="/Signup" class="link">Registre-se</a>
+		</p>
 	</form>
 </div>
 
@@ -120,11 +123,16 @@
 	.card-footer a {
 		text-align: right;
 		font-size: 16px;
-        font-weight: 400;
+		font-weight: 400;
 		opacity: 0.8;
 		color: #4a4444;
 		text-decoration: none;
 		margin: 12px;
+	}
+
+	.link {
+		color: #4a4444;
+		font-weight: 400;
 	}
 
 	.otherwise {
