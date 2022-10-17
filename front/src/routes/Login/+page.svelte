@@ -183,8 +183,10 @@
 		}
 
 		.facebook {
+			color: #BCBCBC;
+    	font: normal normal bold 16px/23px Gilroy;
 			background: #ffffff 0% 0% no-repeat padding-box;
-
+			margin-right: 0px;
 			box-shadow: 0px 3px 6px #a7b6c414;
 
 			border: 1px solid #a7b6c4;
@@ -201,8 +203,10 @@
 		}
 
 		.google {
+			color: #BCBCBC;
+    	font: normal normal bold 16px/23px Gilroy;
 			background: #ffffff 0% 0% no-repeat padding-box;
-
+			margin-left: 0px;
 			box-shadow: 0px 3px 6px #a7b6c414;
 
 			border: 1px solid #a7b6c4;
