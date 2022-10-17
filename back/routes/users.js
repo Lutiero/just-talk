@@ -13,7 +13,8 @@ router.post('/create', async (req, res) =>{
     res.status(201).json(newUser);
 }); 
 
-router.get('/login', async (req, res) => {   
+router.post('/signin', async (req, res) => {   
+    console.log(req.body.email);
     const email = req.body.email; 
     const password = req.body.password;   
 

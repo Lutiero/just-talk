@@ -1,18 +1,18 @@
 /** @type {import('./$types').Actions} */
 export const actions = {
-    signup: async ({request}) => {
+    login: async ({request}) => {
       const data = await request.formData();
-      const newUser = Object.fromEntries(data)
+      const user = Object.fromEntries(data)
 
-      console.log(newUser);
+      console.log(user);
       
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
 
-      let myRequest = await fetch(`http://localhost:3000/users/create`,{
+      let myRequest = await fetch(`http://localhost:3000/users/signin`,{
         method: 'POST',
         headers: myHeaders,
-        body: JSON.stringify(newUser)
+        body: JSON.stringify(user)
     });
 
     myRequest = await myRequest.json();
