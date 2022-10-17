@@ -4,18 +4,24 @@ const app = express();
 const themes = require('../routes/themes');
 const users = require('../routes/users');
 const topics = require('../routes/topics');
+const session = require("express-session");
 const replies = require('../routes/replies');
 
 app.use(express.json());
 app.use(cors());
 
+//Session
+app.use(session({
+    secret: '2-TAP-RAD-UCDB',
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: true, maxAge:  60000 }
+}));
+
 //Routes
-app.use('/themes', themes);
-
-app.use('/users', users);
-
-app.use('/topics', topics);
-
+app.use('/themes', themes); 
+app.use('/users', users); 
+app.use('/topics', topics); 
 app.use('/replies', replies);
 
 

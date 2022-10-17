@@ -17,6 +17,9 @@ module.exports = {
       imageProfile: {
         type: Sequelize.STRING
       },
+      password: {
+        type: Sequelize.STRING
+      },
       isDoctor: {
         type: Sequelize.BOOLEAN
       },
