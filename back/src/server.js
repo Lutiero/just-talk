@@ -16,7 +16,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true,
     cookie: { secure: true, maxAge:  60000 }
-}));
+}))
 
 //Routes
 app.use('/themes', themes); 

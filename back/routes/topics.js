@@ -15,10 +15,21 @@ router.get('/:topicId/replies', async (req, res) => {
     res.status(200).json(replies)
 });
 
-router.post('/themeId', async (req, res) => {
+router.post('/:themeId/topics', async (req, res) => {
+    console.log("Rota certa")
     const { themeId } = req.params;
-})
+    const content = req.body.content;
+    const newTopic = Topic.create({
+        content: content,
+        userId: 1,
+        themeId: themeId
+    });
 
+
+    
+
+    res.status(201).json(newTopic);
+});
 
 
 module.exports = router;
