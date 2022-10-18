@@ -1,6 +1,6 @@
 /** @type {import('./$types').Actions} */
 export const actions = {
-    login: async ({request}) => {
+    login: async ({request, session}) => {
       const data = await request.formData();
       const user = Object.fromEntries(data)
 

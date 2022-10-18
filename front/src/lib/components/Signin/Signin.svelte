@@ -1,3 +1,7 @@
+<script>
+		import { enhance } from '$app/forms';
+</script>
+
 <div id="login">
 	<form action="?/login" method="post" class="card">
 		<div class="card-header">
