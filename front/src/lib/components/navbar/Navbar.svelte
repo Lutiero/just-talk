@@ -3,9 +3,10 @@
 <nav>
 	<div class="nav-container">
 		<a href="/."> <img class="icon-home" src="./icons/ic_home.svg" alt="" /></a>
+
 		<img class="icon-chat" src="./icons/ic_chat.svg" alt="" />
 		<span class="chat-rounded" />
-		<a href="/."><img class="icon-more" src="./icons/ic_more.svg" alt="" /></a>
+		<a href="http://127.0.0.1:5173/menu"><img class="icon-more" src="./icons/ic_more.svg" alt="" /></a>
 	</div>
 </nav>
 
