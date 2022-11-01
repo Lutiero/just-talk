@@ -18,7 +18,7 @@
 			<p class="facebook-txt">Facebook</p>
 		</div>
 	</div>
-	<a href="http://127.0.0.1:5173/Login">Já possuo conta</a>
+	<a href="http://127.0.0.1:5173/Signin">Já possuo conta</a>
 </div>
 
 <style>

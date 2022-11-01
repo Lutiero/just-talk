@@ -5,7 +5,7 @@
 <div class="content-subtitle">
 	<h4 class="subtitle">Temas</h4>
 	<span>
-		<a href="./" class="link"> Ver tudo<img class="icon" src="./icons/ic_arrow.svg" alt="" /></a>
+		<a href="http://127.0.0.1:5173/Mygroups" class="link"> Ver tudo<img class="icon" src="./icons/ic_arrow.svg" alt="" /></a>
 	</span>
 </div>
 
