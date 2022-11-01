@@ -9,6 +9,7 @@ const replies = require('../routes/replies');
 
 app.use(express.json());
 app.use(cors());
+app.use(express.static('.'))
 
 //Session
 app.use(session({

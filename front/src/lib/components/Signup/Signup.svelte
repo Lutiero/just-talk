@@ -1,7 +1,7 @@
 <div class="signup">
 	<p>Registre-se</p>
 	<span>preencha seus dados para criarmos sua conta</span>
-	<form action="?/signup" method="POST">
+	<form action="?/signup" enctype="multipart/form-data" method="POST">
 		<div class="form-group">
 			<label for="name">Nome</label>
 			<input class="input" name="name" type="text" placeholder="Digite seu nome completo..." />
@@ -13,6 +13,10 @@
 		<div class="form-group">
 			<label for="password">Password</label>
 			<input name="password" type="password" placeholder="Digite sua senha..." />
+		</div>
+		<div class="form-group">
+			<label for="avatar">Imagem do perfil</label>
+			<input name="avatar" type="file" />
 		</div>
 		<div class="form-group button">
 			<button class="buttoncreate">Criar nova conta</button>

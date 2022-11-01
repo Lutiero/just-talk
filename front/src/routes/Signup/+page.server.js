@@ -1,10 +1,10 @@
 /** @type {import('./$types').Actions} */
 export const actions = {
-    signup: async ({request}) => {
+    signup: async ({cookies, request, locals }) => {
       const data = await request.formData();
       const newUser = Object.fromEntries(data)
 
-      console.log(newUser);
+      console.log('newUser', newUser);
       
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
@@ -16,6 +16,7 @@ export const actions = {
     });
 
     myRequest = await myRequest.json();
+    cookies.set('sessionid', myRequest.token);
     return {sucess: true}
     
   }
