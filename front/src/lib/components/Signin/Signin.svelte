@@ -1,9 +1,25 @@
 <script>
-		import { enhance } from '$app/forms';
+	import { enhance } from '$app/forms';
+	import { goto } from '$app/navigation';
+	export let msg;
 </script>
 
 <div id="login">
-	<form action="?/login" method="post" class="card">
+	<form
+		action="?/login"
+		method="post"
+		class="card"
+		use:enhance={({ form, data, action, cancel }) => {
+			return async ({ result, update }) => {
+
+				if (result.data.success) {
+					goto('/home');
+				} else {
+					alert('Deu ruim nas suas credenciais');
+				}
+			};
+		}}
+	>
 		<div class="card-header">
 			<a href="#"><img src="icons/ic_back.svg" alt="" /></a>
 
@@ -29,6 +45,10 @@
 				<a href="./recover" class="link">Esqueci minha senha</a>
 				<button class="submit">Entrar</button>
 			</div>
+
+			{#if msg}
+				<span>Crendencials inválidas</span>
+			{/if}
 
 			<p style="text-align: center;">Ou entre com</p>
 

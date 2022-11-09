@@ -6,18 +6,12 @@ const users = require('../routes/users');
 const topics = require('../routes/topics');
 const session = require("express-session");
 const replies = require('../routes/replies');
+const authMiddleware = require('../routes/authMiddleware');
 
 app.use(express.json());
 app.use(cors());
-app.use(express.static('.'))
-
-//Session
-app.use(session({
-    secret: '2-TAP-RAD-UCDB',
-    resave: false,
-    saveUninitialized: true,
-    cookie: { secure: true, maxAge:  60000 }
-}))
+app.use(express.static('.'));
+app.use(authMiddleware);
 
 //Routes
 app.use('/themes', themes); 

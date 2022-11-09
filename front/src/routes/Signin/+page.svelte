@@ -1,5 +1,6 @@
 <script>
 	import Signin from '../../lib/components/Signin/Signin.svelte';
+	export let data;
 </script>
 
-<Signin />
+<Signin msg={data.msg} />

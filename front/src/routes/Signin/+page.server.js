@@ -1,11 +1,9 @@
 /** @type {import('./$types').Actions} */
 export const actions = {
-    login: async ({request, session}) => {
+    login: async ({request, cookies}) => {
       const data = await request.formData();
       const user = Object.fromEntries(data)
-
-      console.log(user);
-      
+   
       const myHeaders = new Headers();
       myHeaders.append('Content-Type', 'application/json');
 
@@ -15,8 +13,17 @@ export const actions = {
         body: JSON.stringify(user)
     });
 
-    myRequest = await myRequest.json();
-    return {sucess: true}
+    console.log('status', myRequest.status);
+    if(myRequest.status > 199 || myRequest.status < 300) {
+      const response = await myRequest.json();
+      cookies.set('token', response.token);
+      return {success: true}
+    } else {
+      
+      return {success: false}
+
+    }
+      
     
   }
       

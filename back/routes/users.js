@@ -9,18 +9,6 @@ const multer  = require('multer');
 const upload = multer({ dest: 'uploads' });
 
 
-router.use(async (req, res, next) => {
-    const token = req.headers.sessionid;
-    if(token) {
-        const payload = jwt.verify(token, 'secret');
-        const user = await User.findOne({email: payload.email});
-        if(user) {
-            req.current_user = user;
-        }
-    }
-    next();
-})
-
 
 router.get('/', async (req, res) =>{
     const users = await User.findAll();
@@ -53,21 +41,25 @@ router.post('/signin', async (req, res) => {
     const email = req.body.email; 
     const encriptedPassword = md5(req.body.password); 
 
-    const users = await User.findAll({
+    const user = await User.findOne({
         where: {
             email: email,
             password: encriptedPassword
         }
-      });     
+      });
 
-    if (users !== null) {
-        req.session.login = email;
-    }
+      if(user) {
+        const token = jwt.sign({
+            email: email
+        }, 'tads2022MasterClass', { expiresIn: '1d' });
+        res.send({token: token});
+      } else {
+        res.status(401).send();
+      }
+      
 
-    console.log(req.session)
-
-    //findByPk(id); //SELECT * FROM USER WHERE name = namer && password = password 
-    res.status(200).json(req.session.login);
+    
+    
 });
 
 
