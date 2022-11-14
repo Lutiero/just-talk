@@ -21,5 +21,5 @@ app.use('/replies', replies);
 
 
 app.listen(3000, () => {
-    console.log('Server ona');
+    console.log('Server on.');
 })
