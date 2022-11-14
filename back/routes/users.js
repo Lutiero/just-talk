@@ -58,6 +58,7 @@ router.post('/signin', async (req, res) => {
         const token = jwt.sign({
             email: email
         }, 'tads2022MasterClass', { expiresIn: '1d' });
+        console.log('token', token);
         res.send({token: token});
       } else {
         res.status(401).send();
