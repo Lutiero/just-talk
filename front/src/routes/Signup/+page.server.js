@@ -12,7 +12,7 @@ export const actions = {
     });
 
     const response = await myRequest.json();
-    cookies.set('sessionid', response.token);
+    cookies.set('token', response.token);
     return { success: true }
     
   }

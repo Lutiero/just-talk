@@ -22,7 +22,7 @@ const authMiddleware = async (req, res, next) => {
         if(req.originalUrl.includes("/users/signin") || req.originalUrl.includes("/users/create")) {
             next();
         } else {
-            res.status(401).send({error: "Área restrita"})
+            res.status(401).send({error: "Área restritaa"})
         }
         
     }
