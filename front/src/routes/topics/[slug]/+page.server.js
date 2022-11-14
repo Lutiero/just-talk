@@ -42,21 +42,5 @@ export const actions = {
 		return { sucess: true };
 	},
 
-	addTopic: async ({ request, params, cookies }) => {
-		const myHeaders = new Headers();
-		myHeaders.append('Content-Type', 'application/json');
-		myHeaders.append('token', cookies.get('token'));
 
-		const data = await request.formData();
-		const body = Object.fromEntries(data);
-
-		let myRequest = await fetch(`http://localhost:3000/topics/${params.slug}/topics`, {
-			method: 'POST',
-			headers: myHeaders,
-			body: JSON.stringify(body)
-		});
-
-		myRequest = await myRequest.json();
-		return { sucess: true };
-	}
 };

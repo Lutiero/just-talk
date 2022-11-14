@@ -10,10 +10,18 @@ const upload = multer({ dest: 'uploads' });
 
 
 
-router.get('/', async (req, res) =>{
-    const users = await User.findAll();
-    res.status(200).json(users);
+router.get('/:token/token', async (req, res) =>{
+    const token = req.params.token;
+
+    console.log('token do back', token);
+
+    const verify = jwt.verify(token, 'tads2022MasterClass', function(err, decoded) {
+        console.log(decoded.foo) 
+      });
+
+    res.status(200).json(verify);
 });
+
 
 router.post('/create', upload.single('avatar') , async (req, res) =>{
     const {name, email, password} = req.body;

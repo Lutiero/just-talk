@@ -20,7 +20,7 @@ export const actions = {
 
 /** @type {import('./$types').PageServerLoad} */
 export const load = async ({ cookies, params }) => {
-
+	
   const myHeaders = new Headers();
   myHeaders.append('Content-Type', 'application/json');
   myHeaders.append('token', cookies.get('token'));

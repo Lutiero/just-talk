@@ -35,10 +35,10 @@ router.get('/:themeId/topic', async (req, res) =>{
 
 router.post('/:themeId/topics', async (req, res) => {
     const { themeId } = req.params;
-    const content = req.body.content;
+    
     const newTopic = Topic.create({
-        content: content,
-        userId: 1,
+        content: req.body.content,
+        userId: req.currentUser.id,
         themeId: themeId
     });
     res.status(201).json(newTopic);
@@ -53,13 +53,11 @@ router.get('/:topicId/replies', async (req, res) => {
 
 router.post('/:topicId/replies', async (req, res) => {
     const { topicId } = req.params;
-    const content = req.body.content;
     const newReply = Reply.create({
-        content: content,
-        userId: 1,
+        content: req.body.content,
+        userId: req.currentUser,
         topicId: topicId
     });
-
 
     const topic = await Topic.findOne({ where: { id: topicId } });
     const newRepliesAmount = topic.repliesAmount + 1;

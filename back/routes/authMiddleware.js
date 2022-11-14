@@ -11,19 +11,21 @@ const authMiddleware = async (req, res, next) => {
                 email: userData.email
             }
         });
+
         if(user) {
             req.currentUser = user;
             next();
         } else {
-            res.status(401).send({error: "Erro de authenticação"})
+            res.status(401).send({error: "Erro de autenticação"})
         }
     } 
     else {
         if(req.originalUrl.includes("/users/signin") || req.originalUrl.includes("/users/create")) {
             next();
         } else {
-            res.status(401).send({error: "Área restritaa"})
+            res.status(401).send({error: "Área restrita"})
         }
+        
         
     }
 }
