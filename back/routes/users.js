@@ -17,15 +17,13 @@ router.get('/', async (req, res) =>{
 
 router.post('/create', upload.single('avatar') , async (req, res) =>{
     const {name, email, password} = req.body;
-    const avatar = req.file;
-    console.log("avatar: ", avatar);
-    console.log("req.file: ", req.file);
     const encriptedPassword = md5(password); 
+    const urlAvatar = `http://localhost:3000/${req.file.path}`;
 
     const newUser = await User.create({
         name: name,
         email: email,
-        imageProfile: '',
+        imageProfile: urlAvatar,
         password: encriptedPassword,
         isDoctor: false
     });

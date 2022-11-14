@@ -4,9 +4,9 @@ module.exports = {
 
       {
         title: 'Depressão',
-        subscribersAmount: 1,
-        smallImage: 'https://iili.io/sRosgn.png',
-        largeImage: 'https://iili.io/sRoPft.png',
+        subscribersAmount: 0,
+        smallImage: 'http://localhost:3000/uploads/themes/sRosgn.png',
+        largeImage: 'http://localhost:3000/uploads/themes/sRoPft.png',
         highlighted: true,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -14,9 +14,9 @@ module.exports = {
 
       {
         title: 'Autoestima',
-        subscribersAmount: 1,
-        smallImage: 'https://iili.io/sRorWN.png',
-        largeImage: 'https://iili.io/sRoSbR.png',
+        subscribersAmount: 0,
+        smallImage: 'http://localhost:3000/uploads/themes/sRorWN.png',
+        largeImage: 'http://localhost:3000/uploads/themes/sRoSbR.png',
         highlighted: true,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -25,8 +25,8 @@ module.exports = {
       {
         title: 'Relacionamento',
         subscribersAmount: 0,
-        smallImage: 'https://iili.io/sRxF5b.png',
-        largeImage: 'https://iili.io/sRopX2.png',
+        smallImage: 'http://localhost:3000/uploads/themes/sRxF5b.png',
+        largeImage: 'http://localhost:3000/uploads/themes/sRopX2.png',
         highlighted: true,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -35,8 +35,8 @@ module.exports = {
       {
         title: 'Sono',
         subscribersAmount: 0,
-        smallImage: 'https://iili.io/sRxnLB.png',
-        largeImage: 'https://iili.io/sRxCXV.png',
+        smallImage: 'http://localhost:3000/uploads/themes/sRxnLB.png',
+        largeImage: 'http://localhost:3000/uploads/themes/sRxCXV.png',
         highlighted: true,
         createdAt: new Date(),
         updatedAt: new Date()
