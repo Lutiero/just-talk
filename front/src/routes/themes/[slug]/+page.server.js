@@ -8,13 +8,12 @@ export const actions = {
 		const data = await request.formData();
 		const body = Object.fromEntries(data);
 
-		let myRequest = await fetch(`http://localhost:3000/topics/${params.slug}/topics`, {
+		let myRequest = await fetch(`http://localhost:3000/themes/${params.slug}/topics`, {
 			method: 'POST',
 			headers: myHeaders,
 			body: JSON.stringify(body)
 		});
 
-		myRequest = await myRequest.json();
 		return { sucess: true };
 	}
 };
