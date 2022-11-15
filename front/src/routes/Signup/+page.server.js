@@ -28,9 +28,6 @@ export const actions = {
 		} else {
 			return { success: true}
 		}
-    
   }
-      
-      
-    }
+}
   
