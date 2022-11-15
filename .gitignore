@@ -8,3 +8,4 @@
 /front/.env
 /front/.env.*
 /front/!.env.example
+/back/uploads
