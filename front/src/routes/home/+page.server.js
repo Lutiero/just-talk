@@ -1,4 +1,7 @@
 import { error } from '@sveltejs/kit';
+import { redirect } from '@sveltejs/kit';
+
+
 
 /** @type {import('./$types').PageServerLoad} */
 export const load = async ({ cookies }) => {
@@ -18,6 +21,6 @@ export const load = async ({ cookies }) => {
 			themes: response
 		};
 	} else {
-		return { success: false };
+		throw redirect(307, '/signin');
 	}
 };

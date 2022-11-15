@@ -28,6 +28,23 @@ router.post('/create', upload.single('avatar') , async (req, res) =>{
     const encriptedPassword = md5(password); 
     const urlAvatar = `http://localhost:3000/${req.file.path}`;
 
+    if(name.length === 0) {
+        res.status(411).send({error: 'Os campos não podem ser vazios'});
+        return
+    }
+
+    if(email.length === 0) {
+        res.status(411).send({error: 'Os campos não podem ser vazios'});
+        return
+    }
+
+    if(password.length === 0) {
+        res.status(411).send({error: 'Os campos não podem ser vazios'});
+        return
+    }
+
+   
+
     const newUser = await User.create({
         name: name,
         email: email,
@@ -58,10 +75,11 @@ router.post('/signin', async (req, res) => {
         const token = jwt.sign({
             email: email
         }, 'tads2022MasterClass', { expiresIn: '1d' });
-        console.log('token', token);
-        res.send({token: token});
+        console.log('achou');
+        res.status(200).send({token: token});
       } else {
-        res.status(401).send();
+        console.log('não achou');
+        res.status(401).send({error: 'Credenciais inválidas'});
       }
       
 

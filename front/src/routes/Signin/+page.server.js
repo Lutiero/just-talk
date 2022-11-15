@@ -13,12 +13,12 @@ export const actions = {
 			body: JSON.stringify(user)
 		});
 
-		if (myRequest.status > 199 || myRequest.status < 300) {
-			const response = await myRequest.json();
-			cookies.set('token', response.token);
-			return { success: true };
+		const response = await myRequest.json();
+
+		if(response.error) {
+			return { success: false}
 		} else {
-			return { success: false };
+			return { success: true}
 		}
 	}
 };
