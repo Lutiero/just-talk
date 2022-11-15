@@ -5,8 +5,8 @@ export const actions = {
 	addTopic: async ({ request, params, cookies }) => {
 		const myHeaders = new Headers();
 		myHeaders.append('Content-Type', 'application/json');
-		myHeaders.append('token', cookies.get('token'));
-		// myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
+		// myHeaders.append('token', cookies.get('token'));
+		myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
 
 		const data = await request.formData();
 		const body = Object.fromEntries(data);
@@ -25,8 +25,8 @@ export const actions = {
 export const load = async ({ cookies, params }) => {
 	const myHeaders = new Headers();
 	myHeaders.append('Content-Type', 'application/json');
-	myHeaders.append('token', cookies.get('token'));
-	// myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
+	// myHeaders.append('token', cookies.get('token'));
+	myHeaders.append('Authorization', `Bearer${cookies.get('token')}`);
 
 
 
