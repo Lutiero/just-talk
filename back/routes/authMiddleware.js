@@ -2,10 +2,10 @@ const jwt = require("jsonwebtoken");
 const { User } = require('../models');
 
 const authMiddleware = async (req, res, next) => {
-    console.log('req.headers.token', req.headers.token);
-    const userToken = req.headers.token;
+    let userToken = req.headers.authorization.split(' ')[1];
+    console.log('userToken', userToken);
 
-    if(userToken != undefined || userToken != null) {
+    if (userToken & userToken !== 'undefined') {
         const userData = jwt.verify(userToken, 'tads2022MasterClass');
         const user = await User.findOne({
             where: {
@@ -13,21 +13,19 @@ const authMiddleware = async (req, res, next) => {
             }
         });
 
-        if(user) {
+        if (user) {
             req.currentUser = user;
             next();
         } else {
-            res.status(401).send({error: "Erro de autenticação"})
+            res.status(401).send({ error: "Erro de autenticação" })
         }
-    } 
-    else {
-        if(req.originalUrl.includes("/users/signin") || req.originalUrl.includes("/users/create")) {
+        
+    } else {
+        if (req.originalUrl.includes("/users/signin") || req.originalUrl.includes("/users/create")) {
             next();
         } else {
-            res.status(401).send({error: "Área restrita"})
+            res.status(401).send({ error: "Área restrita" })
         }
-        
-        
     }
 }
 
