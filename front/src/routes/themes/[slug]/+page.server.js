@@ -18,6 +18,28 @@ export const actions = {
 		});
 
 		return { sucess: true };
+	},
+	addUserThemes: async ({ request, params, cookies, locals }) => {
+		const myHeaders = new Headers();
+		myHeaders.append('Content-Type', 'application/json'); 
+		myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`); 
+
+		const userId = fetch(`http://localhost:3000/token`, { 
+			body: cookies.get('token')
+		});
+		
+		const myBody = {
+			userId : userId, 
+			themeId : params.slug
+		}; 
+
+		let myRequest = await fetch(`http://localhost:3000/users/addUserThemes`, {
+			method: 'POST',
+			headers: myHeaders,
+			body: JSON.stringify(myBody)
+		});
+
+		return { sucess: true };
 	}
 };
 
