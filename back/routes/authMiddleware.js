@@ -2,9 +2,10 @@ const jwt = require("jsonwebtoken");
 const { User } = require('../models');
 
 const authMiddleware = async (req, res, next) => {
+    console.log('req.headers.token', req.headers.token);
     const userToken = req.headers.token;
 
-    if(userToken) {
+    if(userToken != undefined || userToken != null) {
         const userData = jwt.verify(userToken, 'tads2022MasterClass');
         const user = await User.findOne({
             where: {

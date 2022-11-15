@@ -1,3 +1,5 @@
+import { redirect } from '@sveltejs/kit';
+
 /** @type {import('./$types').Actions} */
 export const actions = {
 	addTopic: async ({ request, params, cookies }) => {
@@ -24,6 +26,9 @@ export const load = async ({ cookies, params }) => {
 	const myHeaders = new Headers();
 	myHeaders.append('Content-Type', 'application/json');
 	myHeaders.append('token', cookies.get('token'));
+	// myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
+
+
 
 	const myThemesRequest = fetch(`http://localhost:3000/themes/${params.slug}`, {
 		method: 'GET',
@@ -38,8 +43,9 @@ export const load = async ({ cookies, params }) => {
 	const requests = await Promise.all([myThemesRequest, myTopicRequest]);
 	const responses = await Promise.all([requests[0].json(), requests[1].json()]);
 
-	return {
-		theme: responses[0],
-		topics: responses[1]
-	};
+	
+		return {
+			theme: responses[0],
+			topics: responses[1]
+		}
 };

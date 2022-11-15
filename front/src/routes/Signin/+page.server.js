@@ -14,10 +14,11 @@ export const actions = {
 		});
 
 		const response = await myRequest.json();
-
+		
 		if(response.error) {
 			return { success: false}
 		} else {
+			cookies.set('token', response.token);
 			return { success: true}
 		}
 	}
