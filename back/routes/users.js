@@ -89,6 +89,7 @@ router.post('/signin', async (req, res) => {
             email: email
         }, 'tads2022MasterClass', { expiresIn: '1d' });
         console.log('achou');
+        console.log('token', token);
         res.status(200).send({token: token});
       } else {
         console.log('não achou');

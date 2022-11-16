@@ -14,6 +14,7 @@
 				console.log('result ok', result);
 				
 				if (result.data.success) {
+					console.log('entrou no /home');
 					goto('/home');
 				} else {
 					message = true;
