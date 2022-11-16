@@ -9,18 +9,28 @@ export const load = async ({ cookies }) => {
 	myHeaders.append('Content-Type', 'application/json');
 	myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
 
-	let myRequest = await fetch('http://localhost:3000/themes', {
+	let myThemesRequest = await fetch('http://localhost:3000/themes', {
 		method: 'GET',
 		headers: myHeaders
 	});
-	
-	const response = await myRequest.json();
 
-	if(response.error) {
+
+	let myUserDataRequest = await fetch(`http://localhost:3000/users/getusertofront`, {
+		method: 'GET',
+		headers: myHeaders,
+	});
+	
+	let themeResponse = await myThemesRequest.json();
+	let userResponse = await myUserDataRequest.json();
+
+	
+
+	if(themeResponse.error) {
 		throw redirect(307, '/Signin');
 	} else {
 		return {
-			themes: response
+			themes: themeResponse,
+			user: userResponse
 		}
 	}
 };

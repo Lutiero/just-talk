@@ -3,11 +3,11 @@ const { User } = require('../models');
 
 const authMiddleware = async (req, res, next) => {
     let userToken = req.headers.authorization;
-    console.log('top middleware', userToken);
+    // console.log('top middleware', userToken);
     
     if (userToken && userToken !== 'Bearer undefined') {
         userToken = req.headers.authorization.split(' ')[1];
-        console.log('split middleware', userToken);
+        // console.log('split middleware', userToken);
         const userData = jwt.verify(userToken, 'tads2022MasterClass');
 
         const user = await User.findOne({
@@ -16,7 +16,7 @@ const authMiddleware = async (req, res, next) => {
             }
         });
 
-        console.log('user middleware', user);
+        // console.log('user middleware', user);
 
         if (user) {
             req.currentUser = user;
@@ -27,7 +27,7 @@ const authMiddleware = async (req, res, next) => {
         
     } else {
         if (req.originalUrl.includes("/users/signin") || req.originalUrl.includes("/users/create")) {
-            console.log('entrou nas excessoes');
+            // console.log('entrou nas excessoes');
             next();
         } else {
             console.log('entrou no ultimo else');
