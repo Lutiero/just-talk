@@ -4,17 +4,21 @@
 <div class="menu">
   <h1>Mais opções</h1>  
   <div class="menu_button">
-    <a href="http://127.0.0.1:5173/Terms">    <img src="icons/ic_terms.svg" alt="" class="google-img" />
+    <a href="/Terms">    <img src="icons/ic_terms.svg" alt="" class="google-img" />
       Termos de uso</a>
   </div>
   <div class="menu_button">
-    <a href="http://127.0.0.1:5173/Policies">    <img src="icons/ic_privacy.svg" alt="" class="google-img" />
+    <a href="/Policies">    <img src="icons/ic_privacy.svg" alt="" class="google-img" />
       Políticas de Privacidade</a>
   </div>
-  <div class="menu_button">
-    <a href="http://127.0.0.1:5173/begin">    <img src="icons/ic_out.svg" alt="" class="google-img" />
+  <form 
+  action="?/logout"
+  method="POST" 
+  class="menu_button"
+  >
+    <a href="/begin"> <img src="icons/ic_out.svg" alt="" class="google-img" />
       Sair</a>
-  </div>
+  </form>
   <Navbar />
 </div>
 
