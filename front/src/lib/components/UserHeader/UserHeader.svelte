@@ -7,7 +7,9 @@
 		<span>Bem vindo(a)</span>
 		<h2>{user.name}</h2>
 	</div>
-	<img src={user.imageProfile} alt="avatar" />
+	<a href="/Profile">
+		<img src={user.imageProfile} alt="avatar" />
+	</a>
 </nav>
 
 <style>
@@ -22,12 +24,12 @@
 		height: 40px;
 	}
 
-    h2 {
-        color: black;
-        margin: 0;
-    }
+	h2 {
+		color: black;
+		margin: 0;
+	}
 
-    .greetings {
-        color: #C1C3C7;
-    }
+	.greetings {
+		color: #c1c3c7;
+	}
 </style>
