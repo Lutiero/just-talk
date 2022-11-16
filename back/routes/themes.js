@@ -15,7 +15,7 @@ router.post('/create', async (req, res) =>{
 
 router.get('/:id', async (req, res) => {
     const { id } = req.params;
-    console.log(id);
+    // console.log(id);
     const theme = await Theme.findByPk(id);
     res.status(200).json(theme);
 });
