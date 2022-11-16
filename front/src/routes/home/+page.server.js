@@ -7,7 +7,6 @@ import { redirect } from '@sveltejs/kit';
 export const load = async ({ cookies }) => {
 	const myHeaders = new Headers();
 	myHeaders.append('Content-Type', 'application/json');
-	// myHeaders.append('token', cookies.get('token'));
 	myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
 
 	let myRequest = await fetch('http://localhost:3000/themes', {
@@ -22,6 +21,6 @@ export const load = async ({ cookies }) => {
 	} else {
 		return {
 			themes: response
-		};
+		}
 	}
 };

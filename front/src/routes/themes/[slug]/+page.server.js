@@ -5,7 +5,6 @@ export const actions = {
 	addTopic: async ({ request, params, cookies }) => {
 		const myHeaders = new Headers();
 		myHeaders.append('Content-Type', 'application/json');
-		// myHeaders.append('token', cookies.get('token'));
 		myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
 
 		const data = await request.formData();
@@ -21,17 +20,17 @@ export const actions = {
 	},
 	addUserThemes: async ({ request, params, cookies, locals }) => {
 		const myHeaders = new Headers();
-		myHeaders.append('Content-Type', 'application/json'); 
-		myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`); 
+		myHeaders.append('Content-Type', 'application/json');
+		myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
 
-		const userId = fetch(`http://localhost:3000/token`, { 
+		const userId = fetch(`http://localhost:3000/token`, {
 			body: cookies.get('token')
 		});
-		
+
 		const myBody = {
-			userId : userId, 
-			themeId : params.slug
-		}; 
+			userId: userId,
+			themeId: params.slug
+		};
 
 		let myRequest = await fetch(`http://localhost:3000/users/addUserThemes`, {
 			method: 'POST',
@@ -47,8 +46,7 @@ export const actions = {
 export const load = async ({ cookies, params }) => {
 	const myHeaders = new Headers();
 	myHeaders.append('Content-Type', 'application/json');
-	// myHeaders.append('token', cookies.get('token'));
-	myHeaders.append('Authorization', `Bearer${cookies.get('token')}`);
+	myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
 
 
 
@@ -65,9 +63,12 @@ export const load = async ({ cookies, params }) => {
 	const requests = await Promise.all([myThemesRequest, myTopicRequest]);
 	const responses = await Promise.all([requests[0].json(), requests[1].json()]);
 
-	
-		return {
-			theme: responses[0],
-			topics: responses[1]
-		}
+	if(responses[0].error) {
+		throw redirect(307, '/Signin');
+	}
+	return {
+		theme: responses[0],
+		topics: responses[1]
+	}
+
 };
