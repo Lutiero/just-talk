@@ -17,7 +17,9 @@
 
 			{#each themes as theme, i}
 				<div class={i == 0 ? 'images first' : 'images'}>
+					<a href={`/themes/${theme.id}`} >
 					<img src={theme.largeImage} alt={theme.title} />
+					</a>
 					<div class="text">
 						<p>{theme.subscribersAmount} pessoas</p>
 					</div>

@@ -2,11 +2,10 @@
 
 <nav>
 	<div class="nav-container">
-		<a href="/."> <img class="icon-home" src="./icons/ic_home.svg" alt="" /></a>
+		<a href="/home"> <img class="icon-home" src="./icons/ic_home.svg" alt="" /></a>
+		<a href="/Mygroups"><img class="icon-chat" src="./icons/ic_chat.png" alt="icon-chat" /></a>
 
-		<img class="icon-chat" src="./icons/ic_chat.svg" alt="" />
-		<span class="chat-rounded" />
-		<a href="http://127.0.0.1:5173/menu"><img class="icon-more" src="./icons/ic_more.svg" alt="" /></a>
+		<a href="/menu"><img class="icon-more" src="./icons/ic_more.svg" alt="" /></a>
 	</div>
 </nav>
 
@@ -30,11 +29,13 @@
 	}
 
 	.icon-chat {
-		position: absolute;
+		width: 80px;
+		height: 80px;
 	}
 
 	.icon-chat:hover {
-		box-shadow: 0px 4px 16px #050c6352;
+		width: 60px;
+		height: 60px;
 	}
 
 	.chat-rounded {
