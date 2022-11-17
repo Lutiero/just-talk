@@ -4,7 +4,7 @@
 
 <section>
 	<div class="header-profile">
-		<img class="ic_back" src="../icons/ic_back.svg" alt="" />
+		<a href="/home"><img class="ic_back" src="../icons/ic_back.svg" alt="" /> </a>
 		<h2>Perfil</h2>
 	</div>
 	<div class="container-profile">
@@ -32,23 +32,52 @@
 	section {
 		/* TODO: remover o width fixo */
 		min-width: 400px;
-		border: 1px solid red;
 		margin: 0 auto;
+		font-size: 18px;
+	}
+
+	input {
+		background-color: white;
+		border: none;
+		border-bottom: 1px solid black;
+		padding: 10px;
+		width: 90%;
+	}
+
+	button {
+		margin-top: 15px;
+	}
+
+	form {
+		width: 100%;
+	}
+
+	input[type="text"] {
+		font-family: "Gilroy", sans-serif;
+		color: black;
+		outline: none;
 	}
 	.ic_back {
-		background-color: black;
+		width: 40px;
+		background-color: rgb(48, 42, 42);
+		border-radius: 50%;
 	}
 
 	.header-profile {
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
+		justify-content: left;
+		gap: 10px;
+		margin-bottom: 10px;
 	}
 
     .container-profile { 
         display: flex;
         flex-direction: column;
         align-items: center;
-        border: 1px solid wheat;
     }
+
+	.container-profile img {
+		margin-bottom: 40px;
+	}
 </style>

@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Topic.belongsTo(models.Theme);
       Topic.hasMany(models.Reply);
+      Topic.belongsTo(models.User, { foreignKey: 'userId' });
     }
   }
   Topic.init(

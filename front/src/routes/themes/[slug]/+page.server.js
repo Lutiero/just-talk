@@ -55,20 +55,31 @@ export const load = async ({ cookies, params }) => {
 		headers: myHeaders
 	});
 
-	const myTopicRequest = fetch(`http://localhost:3000/themes/${params.slug}/topics`, {
+	const myTopicsRequest = fetch(`http://localhost:3000/themes/${params.slug}/topics`, {
 		method: 'GET',
 		headers: myHeaders
 	});
 
-	const requests = await Promise.all([myThemesRequest, myTopicRequest]);
-	const responses = await Promise.all([requests[0].json(), requests[1].json()]);
+	// const myTopicRequest = fetch(`http://localhost:3000/themes/${params.slug}/topic`, {
+	// 	method: 'GET',
+	// 	headers: myHeaders
+	// });
+
+	let myUserDataRequest = await fetch(`http://localhost:3000/users/getusertofront`, {
+		method: 'GET',
+		headers: myHeaders,
+	});
+
+	const requests = await Promise.all([myThemesRequest, myTopicsRequest, myUserDataRequest]);
+	const responses = await Promise.all([requests[0].json(), requests[1].json(), requests[2].json()]);
 
 	if(responses[0].error) {
 		throw redirect(307, '/Signin');
 	}
 	return {
 		theme: responses[0],
-		topics: responses[1]
+		topics: responses[1],
+		currentUser: responses[2]
 	}
 
 };
