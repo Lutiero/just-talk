@@ -2,6 +2,8 @@
 	import Form from '$lib/components/Form/Form.svelte';
 
 	export let topics;
+	console.log('🚀 ~ file: Topics.svelte ~ line 5 ~ topics', topics)
+
 </script>
 
 <div class="chat">
@@ -12,8 +14,8 @@
 			</a>
 		</div>
 		<div class="peoplesChat">
-			<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
-			<h5>Dr. Silvia Lima</h5>
+			<img src="http://localhost:3000/uploads/defaultAvatar/default_avatar" alt="Imagem do usuário" />
+			<h5>Nome do usuário que postou</h5>
 			<a href="/topics/{topic.id}">
 				{topic.repliesAmount === 0 ? '' : topic.repliesAmount + ' respostas'}
 			</a>

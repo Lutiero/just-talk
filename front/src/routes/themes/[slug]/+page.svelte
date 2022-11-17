@@ -4,6 +4,7 @@
 	import Form from '$lib/components/Form/Form.svelte';
 
 	export let data;
+	console.log(data.currentUser.imageProfile);
 </script>
 
 <div>
@@ -13,7 +14,7 @@
 	<div class="inputSpace">
 		<form method="POST" action="?/addTopic">
 			<div class="input">
-				<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
+				<img src="{data.currentUser.imageProfile}" alt="Imagem do usuário" />
 				<input type="text" name="content" class="message" placeholder="Escrever mensagem..." />
 			</div>
 		</form>

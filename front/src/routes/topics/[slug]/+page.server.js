@@ -2,7 +2,7 @@
 export const load = async ({ cookies, params }) => {
 	const myHeaders = new Headers();
 	myHeaders.append('Content-Type', 'application/json');
-	myHeaders.append('token', cookies.get('token'));
+		myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
 
 	const myTopicRequest = fetch(`http://localhost:3000/themes/${params.slug}/topic/`, {
 		method: 'GET',
@@ -31,7 +31,7 @@ export const actions = {
 		// const reply = data.get('content');
 		const myHeaders = new Headers();
 		myHeaders.append('Content-Type', 'application/json');
-		myHeaders.append('token', cookies.get('token'));
+		myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
 
 		let myRequest = await fetch(`http://localhost:3000/themes/${params.slug}/replies/`, {
 			method: 'POST',
