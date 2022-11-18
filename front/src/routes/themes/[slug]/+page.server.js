@@ -48,7 +48,7 @@ export const load = async ({ cookies, params }) => {
 	myHeaders.append('Content-Type', 'application/json');
 	myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
 
-
+	console.log("Chupaaaaaaaaaaaa ===================================> ");
 
 	const myThemesRequest = fetch(`http://localhost:3000/themes/${params.slug}`, {
 		method: 'GET',
@@ -73,9 +73,11 @@ export const load = async ({ cookies, params }) => {
 	const requests = await Promise.all([myThemesRequest, myTopicsRequest, myUserDataRequest]);
 	const responses = await Promise.all([requests[0].json(), requests[1].json(), requests[2].json()]);
 
-	if(responses[0].error) {
+	if (responses[0].error) {
 		throw redirect(307, '/Signin');
 	}
+	console.log('0', responses[0]);
+	console.log('1', responses[1]);
 	return {
 		theme: responses[0],
 		topics: responses[1],

@@ -27,12 +27,12 @@ router.get("/:themeId/topics/", async (req, res) => {
 
   const topics = await Topic.findAll({
     where: {
-      themeId: { [Op.eq]: themeId,},
-      userId: { [Op.eq]: req.currentUser.id,}
+      themeId: { [Op.eq]: themeId, }
     },
+    include: User
   });
 
-  console.log(topics);
+  console.log("topics", topics);
 
   res.status(200).json(topics);
 });

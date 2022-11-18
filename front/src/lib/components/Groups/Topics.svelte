@@ -2,8 +2,7 @@
 	import Form from '$lib/components/Form/Form.svelte';
 
 	export let topics;
-	console.log('🚀 ~ file: Topics.svelte ~ line 5 ~ topics', topics)
-
+	console.log('🚀 ~ file: Topics.svelte ~ line 5 ~ topics', topics);
 </script>
 
 <div class="chat">
@@ -14,15 +13,15 @@
 			</a>
 		</div>
 		<div class="peoplesChat">
-			<img src="http://localhost:3000/uploads/defaultAvatar/default_avatar" alt="Imagem do usuário" />
-			<h5>Nome do usuário que postou</h5>
+			<img src={topic.User.imageProfile} alt="Imagem do usuário" />
+			<h5>{topic.User.name}</h5>
 			<a href="/topics/{topic.id}">
 				{topic.repliesAmount === 0 ? '' : topic.repliesAmount + ' respostas'}
 			</a>
 		</div>
 	{/each}
 </div>
-
+	
 <style>
 	.peoplesChat {
 		display: flex;
@@ -68,5 +67,4 @@
 	a:visited {
 		color: #343342;
 	}
-
 </style>
