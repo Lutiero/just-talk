@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       ThemeUser.belongsTo(models.User)
       ThemeUser.belongsTo(models.Theme)
-      
     }
   }
   ThemeUser.init({
