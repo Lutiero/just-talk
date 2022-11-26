@@ -29,14 +29,6 @@ export const load = async ({ cookies }) => {
 export const actions = {
 	updateProfile: async ({ cookies, request, locals }) => {
 		const data = await request.formData();
-
-		const name = data.get('name');
-		const email = data.get('email');
-		const password = data.get('password');
-		const newpassword = data.get('newpassword');
-
-		console.log(data);
-
 		const myHeaders = new Headers();
 		myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
 
@@ -47,6 +39,12 @@ export const actions = {
 			body: data
 		});
 
-		return { sucess: true };
+		const response = await myRequest.json();
+
+		if(response.error) {
+			return { success: false };
+		} else {
+			return { success: true };
+		}
 	}
 }

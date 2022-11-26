@@ -1,5 +1,7 @@
 <script>
+	import { enhance } from '$app/forms';
 	export let data;
+	export let message = '';
 </script>
 
 <section>
@@ -8,22 +10,45 @@
 		<h2>Perfil</h2>
 	</div>
 	<div class="container-profile">
-		<img src={data.user.imageProfile} alt="imageProfile" />
-		<form action="?/updateProfile" method="post">
+		<img class="image-profile" src={data.user.imageProfile} alt="imageProfile" />
+		<form
+			action="?/updateProfile"
+			method="post"
+			use:enhance={({ form, data, action, cancel }) => {
+				return async ({ result, update }) => {
+					if (result.data.success) {
+						message = 'Dados alterados com sucesso';
+					} else {
+						message = 'O password atual não está correto, tente novamente.';
+					}
+				};
+			}}
+		>
+			<div class="form-group file">
+				<label for="avatar" class="avatar">Imagem do perfil</label>
+				<input id="avatar" name="avatar" type="file" />
+			</div>
 			<div>
 				<input type="text" name="name" value={data.user.name} />
 			</div>
 			<div>
 				<input type="text" name="email" value={data.user.email} />
 			</div>
-            <p>Alterar senha</p>
-            <div>
+			<p>Alterar senha</p>
+
+			{#if message.includes('sucesso')}
+				<span class="success">{message}</span>
+			{:else}
+				<span class="error">{message}</span>
+			{/if}
+
+			<div>
 				<input type="text" name="password" value="" placeholder="Senha atual" />
 			</div>
-            <div>
+			<div>
 				<input type="text" name="newpassword" value="" placeholder="Nova atual" />
 			</div>
-            <button type="submit">Salvar</button>
+			<button type="submit">Salvar</button>
 		</form>
 	</div>
 </section>
@@ -52,8 +77,8 @@
 		width: 100%;
 	}
 
-	input[type="text"] {
-		font-family: "Gilroy", sans-serif;
+	input[type='text'] {
+		font-family: 'Gilroy', sans-serif;
 		color: black;
 		outline: none;
 	}
@@ -71,13 +96,34 @@
 		margin-bottom: 10px;
 	}
 
-    .container-profile { 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+	.container-profile {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
 
 	.container-profile img {
 		margin-bottom: 40px;
+	}
+
+	.form-group.file {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 20px;
+	}
+
+	.error {
+		color: red;
+		font-size: 12px;
+	}
+
+	.success {
+		color: blue;
+	}
+
+	.image-profile {
+		width: 100px;
+		height: 100px;
 	}
 </style>

@@ -75,26 +75,26 @@ router.post("/create", upload.single("avatar"), async (req, res) => {
 
 router.get("/addUserThemes", async (req, res) => {
   const userId = req.body.userId;
-  const themeId = req.body.themeId; 
-  
+  const themeId = req.body.themeId;
+
   const verifyExistTheme = await Theme.findOne({
     where: {
-      id : themeId
+      id: themeId
     },
   });
- 
+
   if (verifyExistTheme === null) {
     res.status(401).send({ error: "Tema inválido" });
     return;
   }
-  
+
   var subscriberCount = verifyExistTheme.subscribersAmount;
   await Theme.update({
     subscribersAmount: subscriberCount + 1,
-  }, 
-  { 
-    where: { id: themeId }, 
-  });
+  },
+    {
+      where: { id: themeId },
+    });
 
   const user = await ThemeUser.create({
     themeId: themeId,
@@ -135,6 +135,7 @@ router.post("/signin", async (req, res) => {
 router.put("/update", upload.single("avatar"), async (req, res) => {
   const { name, email, password, newpassword } = req.body;
   const encriptedPassword = md5(password);
+  const currentUserPassword = req.currentUser.password;
 
   const user = await User.findOne({
     where: {
@@ -145,15 +146,27 @@ router.put("/update", upload.single("avatar"), async (req, res) => {
 
   if (user) {
     const encriptedNewPassword = md5(newpassword);
+
+    // Perguntar para o professor pq esta vindo undefined, sendo que é igual ao POST
+    // let urlAvatar = '';
+    // if (req.file.size > 0) {
+    //   urlAvatar = `http://localhost:3000/${req.file.path}`
+    // } else {
+    //   urlAvatar = user.urlAvatar;
+    // }
+
     await user.update({
       name: name,
       email: email,
       password: encriptedNewPassword,
+      // imageProfile: urlAvatar
     });
     await user.save();
+    res.status(201).send(user);
+  } else {
+    res.status(404).send({ error: 'Password atual inválido' });
   }
-  console.log('updated User', user);
-  res.status(201).send(user);
+
 });
 
 module.exports = router;
