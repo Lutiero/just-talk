@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { User } = require("../models");
+const { Theme } = require("../models");
 const { ThemeUser } = require("../models");
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
@@ -72,9 +73,28 @@ router.post("/create", upload.single("avatar"), async (req, res) => {
   res.send({ token: token });
 });
 
-router.post("/addUserThemes", async (req, res) => {
+router.get("/addUserThemes", async (req, res) => {
   const userId = req.body.userId;
-  const themeId = req.body.themeId;
+  const themeId = req.body.themeId; 
+  
+  const verifyExistTheme = await Theme.findOne({
+    where: {
+      id : themeId
+    },
+  });
+ 
+  if (verifyExistTheme === null) {
+    res.status(401).send({ error: "Tema inválido" });
+    return;
+  }
+  
+  var subscriberCount = verifyExistTheme.subscribersAmount;
+  await Theme.update({
+    subscribersAmount: subscriberCount + 1,
+  }, 
+  { 
+    where: { id: themeId }, 
+  });
 
   const user = await ThemeUser.create({
     themeId: themeId,

@@ -1,21 +1,23 @@
 const express = require("express");
 const router = express.Router(); 
-const { UserTheme } = require("../models");  
-const { Theme } = require("../models");  
+const { ThemeUser } = require("../models");  
+const { Theme } = require("../models"); 
+const session = require("express-session"); 
 
-
-router.post("/findUserGroup", async (req, res) => {
-    const userId = req.body.userId;
-  
-    const userTheme = await UserTheme.find({
+router.get("/findUserGroup", async (req, res) => {
+    const userId = req.currentUser.id; 
+    
+    const userTheme = await ThemeUser.findAll({
       where: {
         userId: userId
       },
     });
-
+     
+    var arrayThemeId = userTheme.map(a => a.themeId);
+ 
     const themesOfUser = await Theme.findAll({
         where: {
-          id: userTheme.themeId
+          id: arrayThemeId
         },
     });
 
@@ -26,7 +28,7 @@ router.post("/findUserGroup", async (req, res) => {
     }
 });
 
-router.post("/findGroup", async (req, res) => {
+router.get("/findGroup", async (req, res) => {
   const titleTheme = req.body.titleTheme; 
 
   const theme = await Theme.findOne({
@@ -41,7 +43,5 @@ router.post("/findGroup", async (req, res) => {
     res.status(401).send({ error: "Group not found" });
   }
 });
-
-
 
 module.exports = router;
