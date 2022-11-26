@@ -73,15 +73,26 @@ router.post("/create", upload.single("avatar"), async (req, res) => {
   res.send({ token: token });
 });
 
-router.get("/addUserThemes", async (req, res) => {
-  const userId = req.body.userId;
-  const themeId = req.body.themeId;
+router.post("/addUserThemes/:themeId", async (req, res) => {
+
+  const themeId = req.params.themeId;
 
   const verifyExistTheme = await Theme.findOne({
     where: {
       id: themeId
     },
   });
+
+  const verifyUserInTheTheme = await ThemeUser.findOne({
+    where: {
+      themeId: themeId,
+      userId: req.currentUser.id
+    }
+  });
+
+  if(verifyUserInTheTheme) {
+    res.status(200).send({success: true})
+  }
 
   if (verifyExistTheme === null) {
     res.status(401).send({ error: "Tema inválido" });
@@ -98,11 +109,30 @@ router.get("/addUserThemes", async (req, res) => {
 
   const user = await ThemeUser.create({
     themeId: themeId,
-    userId: userId,
+    userId: req.currentUser.id,
   });
 
-  res.send("Usuário adicionado ao grupo");
+  res.status(201).send({ message: "ok" });
 });
+
+router.get("/getUserTheme/:themeId", async (req, res) => {
+  const userId = req.currentUser.id;
+  const themeId = req.params.themeId;
+
+  const userTheme = await ThemeUser.findOne({
+    where: {
+      themeId: themeId,
+      userId: userId
+    }
+  });
+
+  if(userTheme) {
+    res.status(200).send({message: 'ok'})
+  } else {
+    res.status(404).send({error: 'não encontrado relação de thema e usuário'})
+  }
+
+})
 
 router.post("/signin", async (req, res) => {
   const email = req.body.email;

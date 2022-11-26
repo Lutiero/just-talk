@@ -2,7 +2,6 @@
 	import Form from '$lib/components/Form/Form.svelte';
 
 	export let topics;
-	console.log('🚀 ~ file: Topics.svelte ~ line 5 ~ topics', topics);
 </script>
 
 <div class="chat">
@@ -21,7 +20,7 @@
 		</div>
 	{/each}
 </div>
-	
+
 <style>
 	.peoplesChat {
 		display: flex;
