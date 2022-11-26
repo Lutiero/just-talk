@@ -9,19 +9,19 @@
 	</div>
 	<div class="container-profile">
 		<img src={data.user.imageProfile} alt="imageProfile" />
-		<form action="" method="post">
+		<form action="?/updateProfile" method="post">
 			<div>
-				<input type="text" value={data.user.name} />
+				<input type="text" name="name" value={data.user.name} />
 			</div>
 			<div>
-				<input type="text" value={data.user.email} />
+				<input type="text" name="email" value={data.user.email} />
 			</div>
             <p>Alterar senha</p>
             <div>
-				<input type="text" value="" placeholder="Senha atual" />
+				<input type="text" name="password" value="" placeholder="Senha atual" />
 			</div>
             <div>
-				<input type="text" value="" placeholder="Nova atual" />
+				<input type="text" name="newpassword" value="" placeholder="Nova atual" />
 			</div>
             <button type="submit">Salvar</button>
 		</form>
