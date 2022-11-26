@@ -35,7 +35,7 @@ router.post("/create", upload.single("avatar"), async (req, res) => {
 
   let urlAvatar = `http://localhost:3000/uploads/defaultAvatar/default_avatar`;
 
-  if(req.file.size > 0) {
+  if (req.file.size > 0) {
     urlAvatar = `http://localhost:3000/${req.file.path}`
   }
 
@@ -110,6 +110,30 @@ router.post("/signin", async (req, res) => {
     console.log("não achou");
     res.status(401).send({ error: "Credenciais inválidas" });
   }
+});
+
+router.put("/update", upload.single("avatar"), async (req, res) => {
+  const { name, email, password, newpassword } = req.body;
+  const encriptedPassword = md5(password);
+
+  const user = await User.findOne({
+    where: {
+      email: email,
+      password: encriptedPassword,
+    },
+  });
+
+  if (user) {
+    const encriptedNewPassword = md5(newpassword);
+    await user.update({
+      name: name,
+      email: email,
+      password: encriptedNewPassword,
+    });
+    await user.save();
+  }
+  console.log('updated User', user);
+  res.status(201).send(user);
 });
 
 module.exports = router;
