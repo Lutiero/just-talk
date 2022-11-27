@@ -32,4 +32,14 @@
 	.greetings {
 		color: #c1c3c7;
 	}
+	@media screen and (max-width: 380px) {
+	.greetings {
+    margin-left: 13px;
+  }
+}
+@media screen and (max-width: 380px) {
+	nav img {
+    margin-right: 13px;
+  }
+}
 </style>

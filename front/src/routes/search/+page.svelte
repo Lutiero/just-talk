@@ -1,15 +1,14 @@
 <script>
-	export let themes;
+  export let themes;
 </script>
 
-<div class="content-subtitle">
-	<h4 class="subtitle">Temas</h4>
-	<span>
-		<a href="http://127.0.0.1:5173/Mygroups" class="link"> Ver tudo<img class="icon" src="./icons/ic_arrow.svg" alt="" /></a>
-	</span>
-</div>
 
-<div class="container-image">
+<div class="groups">
+    <div class="head">
+      <a href="./home"><img src="icons/ic_black.svg"/></a>
+      <input>
+    </div>
+    <div class="container-image">
 	<ul class="image-list">
 		{#each themes as theme}
 			<li>
@@ -25,42 +24,14 @@
 		{/each}
 	</ul>
 </div>
-
+</div>
 <style>
-	.subtitle {
-		letter-spacing: 0.32px;
-		color: #343342;
-	}
-
-	.content-subtitle {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding-top: 32px;
-	}
-
-	.icon {
-		width: 16px;
-		height: 16px;
-	}
-
 	.image-list {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		gap: 16px;
 	}
-
-	.link {
-		display: flex;
-		align-items: center;
-		font-weight: 400;
-	}
-
-	.link .icon {
-		color: #3ab4d1;
-	}
-
 	.image {
 		position: relative;
 	}
@@ -88,10 +59,4 @@
 		border-radius: 4px;
 		cursor: pointer;
 	}
-@media screen and (max-width: 380px) {
-	.content-subtitle h4 {
-    margin-left: 13px;
-  }
-}
-
 </style>
