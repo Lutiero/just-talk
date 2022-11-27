@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router(); 
 const { ThemeUser } = require("../models");  
 const { Theme } = require("../models"); 
-const session = require("express-session"); 
+const { Op } = require("sequelize");
 
 router.get("/findUserGroup", async (req, res) => {
     const userId = req.currentUser.id; 
@@ -28,17 +28,33 @@ router.get("/findUserGroup", async (req, res) => {
     }
 });
 
-router.get("/findGroup", async (req, res) => {
+router.post("/findGroup", async (req, res) => {
   const titleTheme = req.body.titleTheme; 
-
-  const theme = await Theme.findOne({
+  const userId = req.currentUser.id; 
+    
+  const userTheme = await ThemeUser.findAll({
     where: {
+      userId: userId
+    },
+  }); 
+       
+  var arrayThemeId = userTheme.map(a => a.themeId);
+
+  const themesOfUser = await Theme.findAll({
+    where: {
+      id: arrayThemeId,
       title: titleTheme
     },
   });
+  console.log('themesOfUser', themesOfUser); 
+  
+  // var teste = Theme.findAll({ where: { title: { [Op.like]:  titleTheme } } })
+  // .then(teste => {
+  //   res.send({teste});
+  // }); 
 
-  if (theme) {
-    res.status(200).send({ theme });
+  if (themesOfUser) {
+    res.status(200).send({ themesOfUser });
   } else { 
     res.status(401).send({ error: "Group not found" });
   }
