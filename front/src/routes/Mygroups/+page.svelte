@@ -109,6 +109,30 @@
         <p>10 Horas atrás</p>
       </div>
     </div>
+    <div class="persons">
+      <div class="imgperson">
+        <img src="images/doug.png"/>
+      </div>
+      <div class="textperson">
+        <h5>(Sono) Dr. Silva Lima</h5>
+        <span>Lorem ipsum dolor sit amet conse...</span>
+      </div>
+      <div class="time">
+        <p>10 Horas atrás</p>
+      </div>
+    </div>
+    <div class="persons">
+      <div class="imgperson">
+        <img src="images/doug.png"/>
+      </div>
+      <div class="textperson">
+        <h5>(Sono) Dr. Silva Lima</h5>
+        <span>Lorem ipsum dolor sit amet conse...</span>
+      </div>
+      <div class="time">
+        <p>10 Horas atrás</p>
+      </div>
+    </div>
 </div>
 </div>
 
