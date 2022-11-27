@@ -18,7 +18,7 @@
   class="menu_button"
   >
   <div class="logout">
-    <img src="icons/ic_privacy.svg" alt="" class="google-img" />
+    <img src="icons/ic_out.svg" alt="" class="google-img" />
     <button>
       Sair
     </button>

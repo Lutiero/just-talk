@@ -147,4 +147,9 @@
 	#radio4:checked ~ .first {
 		margin-left: -1200px;
 	}
+	@media screen and (max-width: 380px) {
+	.title {
+    margin-left: 13px;
+  }
+}
 </style>

@@ -20,6 +20,7 @@
 <style>
 	.inputSpace {
 		margin-top: 20px;
+		min-width: 350px;
 	}
 	.input {
 		position: relative;

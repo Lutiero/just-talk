@@ -88,4 +88,10 @@
 		border-radius: 4px;
 		cursor: pointer;
 	}
+@media screen and (max-width: 380px) {
+	.content-subtitle h4 {
+    margin-left: 13px;
+  }
+}
+
 </style>
