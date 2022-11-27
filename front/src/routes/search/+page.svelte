@@ -52,6 +52,7 @@
 		position: absolute;
 		top: 0px;
 		left: 40px;
+		width: 100%;
 	}
 	.head img{
 		position: absolute;
