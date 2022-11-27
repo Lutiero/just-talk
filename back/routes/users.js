@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { User } = require("../models");
+const { Theme } = require("../models");
 const { ThemeUser } = require("../models");
 const session = require("express-session");
 const jwt = require("jsonwebtoken");
@@ -35,7 +36,7 @@ router.post("/create", upload.single("avatar"), async (req, res) => {
 
   let urlAvatar = `http://localhost:3000/uploads/defaultAvatar/default_avatar`;
 
-  if(req.file.size > 0) {
+  if (req.file.size > 0) {
     urlAvatar = `http://localhost:3000/${req.file.path}`
   }
 
@@ -72,17 +73,66 @@ router.post("/create", upload.single("avatar"), async (req, res) => {
   res.send({ token: token });
 });
 
-router.post("/addUserThemes", async (req, res) => {
-  const userId = req.body.userId;
-  const themeId = req.body.themeId;
+router.post("/addUserThemes/:themeId", async (req, res) => {
+
+  const themeId = req.params.themeId;
+
+  const verifyExistTheme = await Theme.findOne({
+    where: {
+      id: themeId
+    },
+  });
+
+  const verifyUserInTheTheme = await ThemeUser.findOne({
+    where: {
+      themeId: themeId,
+      userId: req.currentUser.id
+    }
+  });
+
+  if(verifyUserInTheTheme) {
+    res.status(200).send({success: true})
+  }
+
+  if (verifyExistTheme === null) {
+    res.status(401).send({ error: "Tema inválido" });
+    return;
+  }
+
+  var subscriberCount = verifyExistTheme.subscribersAmount;
+  await Theme.update({
+    subscribersAmount: subscriberCount + 1,
+  },
+    {
+      where: { id: themeId },
+    });
 
   const user = await ThemeUser.create({
     themeId: themeId,
-    userId: userId,
+    userId: req.currentUser.id,
   });
 
-  res.send("Usuário adicionado ao grupo");
+  res.status(201).send({ message: "ok" });
 });
+
+router.get("/getUserTheme/:themeId", async (req, res) => {
+  const userId = req.currentUser.id;
+  const themeId = req.params.themeId;
+
+  const userTheme = await ThemeUser.findOne({
+    where: {
+      themeId: themeId,
+      userId: userId
+    }
+  });
+
+  if(userTheme) {
+    res.status(200).send({message: 'ok'})
+  } else {
+    res.status(404).send({error: 'não encontrado relação de thema e usuário'})
+  }
+
+})
 
 router.post("/signin", async (req, res) => {
   const email = req.body.email;
@@ -110,6 +160,43 @@ router.post("/signin", async (req, res) => {
     console.log("não achou");
     res.status(401).send({ error: "Credenciais inválidas" });
   }
+});
+
+router.put("/update", upload.single("avatar"), async (req, res) => {
+  const { name, email, password, newpassword } = req.body;
+  const encriptedPassword = md5(password);
+  const currentUserPassword = req.currentUser.password;
+
+  const user = await User.findOne({
+    where: {
+      email: email,
+      password: encriptedPassword,
+    },
+  });
+
+  if (user) {
+    const encriptedNewPassword = md5(newpassword);
+
+    // Perguntar para o professor pq esta vindo undefined, sendo que é igual ao POST
+    // let urlAvatar = '';
+    // if (req.file.size > 0) {
+    //   urlAvatar = `http://localhost:3000/${req.file.path}`
+    // } else {
+    //   urlAvatar = user.urlAvatar;
+    // }
+
+    await user.update({
+      name: name,
+      email: email,
+      password: encriptedNewPassword,
+      // imageProfile: urlAvatar
+    });
+    await user.save();
+    res.status(201).send(user);
+  } else {
+    res.status(404).send({ error: 'Password atual inválido' });
+  }
+
 });
 
 module.exports = router;

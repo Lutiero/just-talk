@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.belongsToMany(models.Theme, {through: 'ThemeUser'})
+      User.hasMany(models.Topic, { foreignKey: 'userId' })
     }
   }
   User.init({

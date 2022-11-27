@@ -16,8 +16,10 @@
   method="POST" 
   class="menu_button"
   >
-    <a href="/begin"> <img src="icons/ic_out.svg" alt="" class="google-img" />
-      Sair</a>
+    <button>
+      Sair
+
+    </button>
   </form>
   <Navbar />
 </div>

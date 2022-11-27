@@ -12,8 +12,8 @@
 			</a>
 		</div>
 		<div class="peoplesChat">
-			<img src="https://iili.io/sRCMdb.png" alt="Imagem do usuário" />
-			<h5>Dr. Silvia Lima</h5>
+			<img src={topic.User.imageProfile} alt="Imagem do usuário" />
+			<h5>{topic.User.name}</h5>
 			<a href="/topics/{topic.id}">
 				{topic.repliesAmount === 0 ? '' : topic.repliesAmount + ' respostas'}
 			</a>
@@ -66,5 +66,4 @@
 	a:visited {
 		color: #343342;
 	}
-
 </style>
