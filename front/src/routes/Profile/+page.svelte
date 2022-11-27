@@ -2,6 +2,7 @@
 	import { enhance } from '$app/forms';
 	export let data;
 	export let message = '';
+	
 </script>
 
 <section>
@@ -14,6 +15,7 @@
 		<form
 			action="?/updateProfile"
 			method="post"
+			enctype="multipart/form-data"
 			use:enhance={({ form, data, action, cancel }) => {
 				return async ({ result, update }) => {
 					if (result.data.success) {
@@ -43,10 +45,10 @@
 			{/if}
 
 			<div>
-				<input type="text" name="password" value="" placeholder="Senha atual" />
+				<input type="password" name="password" value="" placeholder="Senha atual" />
 			</div>
 			<div>
-				<input type="text" name="newpassword" value="" placeholder="Nova atual" />
+				<input type="password" name="newpassword" value="" placeholder="Nova atual" />
 			</div>
 			<button type="submit">Salvar</button>
 		</form>
@@ -60,13 +62,21 @@
 		margin: 0 auto;
 		font-size: 18px;
 	}
-
 	input {
-		background-color: white;
+		background-color: #fafbfc;
 		border: none;
 		border-bottom: 1px solid black;
 		padding: 10px;
 		width: 90%;
+	}
+	input[type='password'] {
+		background-color: #fafbfc;
+		border: none;
+		outline: none;
+		border-bottom: 1px solid black;
+		padding: 10px;
+		width: 90%;
+		color: black;
 	}
 
 	button {
@@ -91,7 +101,7 @@
 	.header-profile {
 		display: flex;
 		align-items: center;
-		justify-content: left;
+		justify-content: space-between;
 		gap: 10px;
 		margin-bottom: 10px;
 	}
@@ -120,6 +130,7 @@
 
 	.success {
 		color: blue;
+		font-size: 12px;
 	}
 
 	.image-profile {
