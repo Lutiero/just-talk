@@ -1,31 +1,69 @@
 <script>
-  export let themes;
 </script>
 
 
 <div class="groups">
     <div class="head">
       <a href="./home"><img src="icons/ic_black.svg"/></a>
-      <input>
+      <input placeholder="Buscar por grupos">
     </div>
     <div class="container-image">
 	<ul class="image-list">
-		{#each themes as theme}
 			<li>
 				<div class="image">
-					<a href="themes/{theme.id}">
-						<img src={theme.smallImage} alt={theme.title} />
+					<a href="themes/1">
+						<img src="images/sonos.png" alt="ola" />
 					</a>
 					<span class="image-title"
-						>{theme.title} <span class="image-descrition">{theme.subscribersAmount} pessoas</span>
+						> Ola <span class="image-descrition"> 10 pessoas</span>
 					</span>
 				</div>
 			</li>
-		{/each}
+			<li>
+				<div class="image">
+					<a href="themes/1">
+						<img src="images/sonos.png" alt="ola" />
+					</a>
+					<span class="image-title"
+						> Ola <span class="image-descrition"> 10 pessoas</span>
+					</span>
+				</div>
+			</li>
+			<li>
+				<div class="image">
+					<a href="themes/1">
+						<img src="images/sonos.png" alt="ola" />
+					</a>
+					<span class="image-title"
+						> Ola <span class="image-descrition"> 10 pessoas</span>
+					</span>
+				</div>
+			</li>
 	</ul>
 </div>
 </div>
 <style>
+	.head{
+		padding-top: 10px;
+		padding-bottom: 40px;
+		position: relative;
+	}
+	.head input{
+		position: absolute;
+		top: 0px;
+		left: 40px;
+		width: 100%;
+	}
+	.head img{
+		position: absolute;
+		top: -3px;
+    left: 10px;
+
+	}
+	.groups input {
+		border: none;
+		background-color: white;
+	}
 	.image-list {
 		display: flex;
 		flex-wrap: wrap;
@@ -34,6 +72,10 @@
 	}
 	.image {
 		position: relative;
+	}
+	.image img{
+		height: 240px;
+		width: 175px;
 	}
 
 	.image-title {
