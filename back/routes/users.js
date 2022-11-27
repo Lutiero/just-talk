@@ -165,8 +165,7 @@ router.post("/signin", async (req, res) => {
 router.put("/update", upload.single("avatar"), async (req, res) => {
   const { name, email, password, newpassword } = req.body;
   const encriptedPassword = md5(password);
-  const currentUserPassword = req.currentUser.password;
-
+  
   const user = await User.findOne({
     where: {
       email: email,
@@ -177,19 +176,18 @@ router.put("/update", upload.single("avatar"), async (req, res) => {
   if (user) {
     const encriptedNewPassword = md5(newpassword);
 
-    // Perguntar para o professor pq esta vindo undefined, sendo que é igual ao POST
-    // let urlAvatar = '';
-    // if (req.file.size > 0) {
-    //   urlAvatar = `http://localhost:3000/${req.file.path}`
-    // } else {
-    //   urlAvatar = user.urlAvatar;
-    // }
+    let urlAvatar = '';
+    if (req.file.size > 0) {
+      urlAvatar = `http://localhost:3000/${req.file.path}`
+    } else {
+      urlAvatar = user.urlAvatar;
+    }
 
     await user.update({
       name: name,
       email: email,
       password: encriptedNewPassword,
-      // imageProfile: urlAvatar
+      imageProfile: urlAvatar
     });
     await user.save();
     res.status(201).send(user);
