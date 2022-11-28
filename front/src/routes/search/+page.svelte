@@ -1,64 +1,53 @@
 <script>
+	import { enhance } from '$app/forms';
+	export let data;
 </script>
 
-
 <div class="groups">
-    <div class="head">
-      <a href="./home"><img src="icons/ic_black.svg"/></a>
-      <input placeholder="Buscar por grupos">
-    </div>
-    <div class="container-image">
-	<ul class="image-list">
-			<li>
-				<div class="image">
-					<a href="themes/1">
-						<img src="images/sonos.png" alt="ola" />
-					</a>
-					<span class="image-title"
-						> Ola <span class="image-descrition"> 10 pessoas</span>
-					</span>
-				</div>
-			</li>
-			<li>
-				<div class="image">
-					<a href="themes/1">
-						<img src="images/sonos.png" alt="ola" />
-					</a>
-					<span class="image-title"
-						> Ola <span class="image-descrition"> 10 pessoas</span>
-					</span>
-				</div>
-			</li>
-			<li>
-				<div class="image">
-					<a href="themes/1">
-						<img src="images/sonos.png" alt="ola" />
-					</a>
-					<span class="image-title"
-						> Ola <span class="image-descrition"> 10 pessoas</span>
-					</span>
-				</div>
-			</li>
-	</ul>
+	<div class="head">
+		<a href="./home"><img src="icons/ic_black.svg" /></a>
+		<form action="?/buscaGrupos" method="post">
+			<input placeholder="Buscar por grupos" name="titleTheme" />
+			<button type="submit">Procurar</button>
+		</form>
+	</div>
+	
+		<div class="container-image">
+			<ul class="image-list">
+				<li>
+					<div class="image">
+						<a href="/themes/$">
+							<img src="#" alt="ola" />
+						</a>
+						<span class="image-title">
+							
+							<span class="image-descrition"> </span>
+						</span>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div />
+
 </div>
-</div>
+
 <style>
-	.head{
+	.head {
 		padding-top: 10px;
 		padding-bottom: 40px;
 		position: relative;
 	}
-	.head input{
+	.head input {
 		position: absolute;
 		top: 0px;
 		left: 40px;
 		width: 100%;
 	}
-	.head img{
+	.head img {
 		position: absolute;
 		top: -3px;
-    left: 10px;
-
+		left: 10px;
 	}
 	.groups input {
 		border: none;
@@ -73,7 +62,7 @@
 	.image {
 		position: relative;
 	}
-	.image img{
+	.image img {
 		height: 240px;
 		width: 175px;
 	}
@@ -100,5 +89,18 @@
 		box-shadow: 0px 0px 6px #a7b6c43d;
 		border-radius: 4px;
 		cursor: pointer;
+	}
+
+	input {
+		color: black;
+	}
+
+	.error {
+		color: red;
+		font-size: 18px;
+	}
+
+	form {
+		width: 120px;
 	}
 </style>
