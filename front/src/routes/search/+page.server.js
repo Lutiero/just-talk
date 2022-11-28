@@ -1,36 +1,25 @@
-import { error } from '@sveltejs/kit';
-import { redirect } from '@sveltejs/kit';
+/** @type {import('./$types').Actions} */
+export const actions = {
+	buscaGrupos: async ({ cookies, request, locals }) => {
+		const data = await request.formData();
+		const query = Object.fromEntries(data);
+		const myHeaders = new Headers();
+		myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
+		myHeaders.append('Content-Type', 'application/json');
 
 
+		let themesOfUser = await fetch('http://localhost:3000/groups/findGroup', {
+			method: 'POST',
+			headers: myHeaders,
+			body: JSON.stringify(query)
+		});
 
-/** @type {import('./$types').PageServerLoad} */
-export const load = async ({ cookies }) => {
-	const myHeaders = new Headers();
-	myHeaders.append('Content-Type', 'application/json');
-	myHeaders.append('Authorization', `Bearer ${cookies.get('token')}`);
+		const themesOfUserResponse = await themesOfUser.json();
+		console.log('themesOfUserResponse', themesOfUserResponse.themesOfUser.Theme);
 
-	let myThemesRequest = await fetch('http://localhost:3000/themes', {
-		method: 'GET',
-		headers: myHeaders
-	});
-
-
-	let myUserDataRequest = await fetch(`http://localhost:3000/users/getusertofront`, {
-		method: 'GET',
-		headers: myHeaders,
-	});
-	
-	let themeResponse = await myThemesRequest.json();
-	let userResponse = await myUserDataRequest.json();
-
-	
-
-	if(themeResponse.error) {
-		throw redirect(307, '/Signin');
-	} else {
 		return {
-			themes: themeResponse,
-			user: userResponse
-		}
+			response: themesOfUserResponse.themesOfUser
+		};
+
 	}
-};
+}
